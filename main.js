@@ -152,3 +152,98 @@
 
     let presentation = `Hello world! My name is ${firstname} ${lastname} and i'm ${myAge} years old. My favorite series is ${favSeries} and my favorite movie is ${favMovie}. Even though i don't read a lot, my favorite book is still ${favBook}.`;
     console.log(presentation);
+
+//Exercise 10
+    console.info('%cExercise 10', 'color: white; background: grey;');
+
+    let i = 0;
+
+    while(i < 10){
+        i++;
+        console.log(i);
+    };
+
+//Exercise 11
+    console.info('%cExercise 11', 'color: white; background: grey;');
+
+    i = 10;
+
+    while(i > 0){
+        console.log(i);
+        i--;
+    };
+
+//Exercise 12
+    console.info('%cExercise 12', 'color: white; background: grey;');
+
+    x = 0;
+    i = 1;
+
+    while(i < 11){
+        x += i
+        i++
+
+        console.log(x);
+    };
+
+//Exercise 13
+    console.info('%cExercise 13', 'color: white; background: grey;');
+    
+    i = 1;
+    let arr = [];
+
+    while(i < 11){
+        num = Math.floor(Math.random() * 11);
+        arr.push(num);
+        i++
+    };
+
+    console.log(arr);
+
+//Exercise 14
+    console.info('%cExercise 14', 'color: white; background: grey;');
+
+    i = 0;
+    console.log(firstname);
+
+    do{
+        console.log(i+1, ":", firstname[i]);
+        i++;
+    } while(i < firstname.length);
+
+    /* 
+    Difference between while and do while loops is where the condition is "executed". 
+    In a while loop, it will excute the code once before checking if the condition is met.
+    In a do while loop, it will first check the condition and then stop the execution if the condition isn't met.
+    */
+
+//Exercise 15
+    console.info('%cExercise 15', 'color: white; background: grey;');
+
+    for (let i = 1; i < 11; i++){
+        console.log(i);
+    };
+
+//Exercise 16
+    console.info('%cExercise 16', 'color: white; background: grey;');
+
+    
+    for (let i = 10; i > 0; i--){
+        console.log(i);
+    };
+
+//Exercise 16.1
+    console.info('%cExercise 16.1', 'color: white; background: grey;');
+
+    
+    let tri = "";
+
+    for (let i = 1; i < 7; i++){
+        tri = tri + "#"
+        console.log(tri);
+    };
+
+//Exercise 17
+    console.info('%cExercise 17', 'color: white; background: grey;');
+
+    let actArr = [""];
