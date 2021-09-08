@@ -42,12 +42,12 @@
     let capname = "jeppe"
 
     let str_1 = capname.slice(1);
-    let str_2 = capname.substring(0, 1).toUpperCase();
+    let str_2 = capname[0].toUpperCase();
     console.log(str_2+str_1);
 
     function capfirst(name){
         let str_1 = name.slice(1);
-        let str_2 = name.substring(0, 1).toUpperCase();
+        let str_2 = name[0].toUpperCase();
         return str_2+str_1;
     };
 
@@ -237,13 +237,127 @@
 
     
     let tri = "";
+    i = 1
 
-    for (let i = 1; i < 7; i++){
-        tri = tri + "#"
+    while (i < 7){
+        tri = tri + "#";
         console.log(tri);
+        i++;
     };
 
 //Exercise 17
     console.info('%cExercise 17', 'color: white; background: grey;');
 
-    let actArr = [""];
+    let actArr = ["Matthew Mercer", "Margot Robbie", "Ryan Renolds", "Marisha Ray", "Adam Driver"];
+
+    for (let i = 0; i < actArr.length; i++){
+        if(i == 3){
+            console.log("Ladies and Gentlemen!", actArr[i]);
+        } else{
+            console.log(actArr[i]);
+        }
+    };
+
+//Exercise 18
+    console.info('%cExercise 18', 'color: white; background: grey;');
+
+    for (let i = 0; i < actArr.length; i++){
+        if(i == 3){ 
+            break; 
+        };
+        console.log(actArr[i]);
+    };
+
+//Exercise 19
+    console.info('%cExercise 19', 'color: white; background: grey;');
+
+    let priceTV = 1000;    
+
+    let order = ["color", "remote", "flat", 2020];
+    let orderStr = order.join(', ');
+
+    if(order.includes("color")){
+        priceTV += 500;
+    };
+    if(order.includes("remote")){
+        priceTV += 150;
+    };
+    if(order.includes("flat")){
+        priceTV = priceTV * 2;
+    };
+
+    if(order[order.length - 1] == 1970){priceTV * 1.05}
+    else if(order.includes(1980)){ priceTV = priceTV * 1.10}
+    else if(order.includes(1990)){ priceTV = priceTV * 1.20}
+    else if(order.includes(2000)){ priceTV = priceTV * 1.40}
+    else if(order.includes(2010)){ priceTV = priceTV * 1.80}
+    else if(order.includes(2020)){ priceTV = priceTV * 2.60}
+
+    console.log("Price of a", orderStr, "TV:", priceTV);  
+
+//Exercise 19.1
+    console.info('%cExercise 19.1', 'color: white; background: grey;');
+
+    for (let i = 1; i <= 100; i++) {
+        if(i % 3 === 0 && i % 5 === 0){
+            console.log("Fizzbuzz");
+        } else if(i % 3 === 0){
+            console.log("Fizz");
+        } else if(i % 5 === 0){
+            console.log("Buzz");
+        } else{
+            console.log(i);
+        }
+    };
+
+//Exercise 20
+    console.info('%cExercise 20', 'color: white; background: grey;');
+
+    module = function(){
+        let str = "Jeppe Bentzen ";
+        let str_2 = "is cool";
+        return str.concat(str_2);
+    }
+
+    console.log(module());
+
+//Exercise 21
+    console.info('%cExercise 21', 'color: white; background: grey;');
+
+    ex_21_1 = function(firstname, lastname){
+        let str = "My name is " + firstname + " " + lastname + ". And this is the 1st function";
+        return str;
+    };
+
+    function ex_21_2(firstname, lastname){
+        let str = "My name is " + firstname + " " + lastname + ". And this is the 2nd function";
+        return str;
+    };
+
+    let ex_21_3 = (firstname, lastname) =>{
+        let str = "My name is " + firstname + " " + lastname + ". And this is the 3rd function";
+        return str;
+    };
+
+    console.log(ex_21_1("Jeppe", "Bentzen"));
+    console.log(ex_21_2("Jeppe", "Bentzen"));
+    console.log(ex_21_3("Jeppe", "Bentzen"));
+
+//Exercise 22
+    console.info('%cExercise 22', 'color: white; background: grey;');
+
+    function square(x){
+        return x * x;
+    };
+
+    console.log(square(10));
+    
+//Exercise 24
+    console.info('%cExercise 24', 'color: white; background: grey;');
+
+    let piArr = [1, 50, 7845];
+
+    for(let i = 0; i < piArr.length; i++){
+        piArr[i] = piArr[i] * 3.14;
+        console.log(piArr[i]);
+    };
