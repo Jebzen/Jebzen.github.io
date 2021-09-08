@@ -361,3 +361,55 @@
         piArr[i] = piArr[i] * 3.14;
         console.log(piArr[i]);
     };
+    
+//Exercise 26
+    console.info('%cExercise 26', 'color: white; background: grey;');
+
+    let bird = {
+        sound: 5,
+        desc: "Small and can fly",
+        name: "bird"
+    };
+
+    let dog = {
+        sound: 10,
+        desc: "Medium and can run",
+        name: "dog"
+    };
+
+    let hippo = {
+        sound: 15,
+        desc: "Big and can swim",
+        name: "hippo"
+    };
+
+    let birdSen = `This animal is a ${bird.name}. It has a sound of ${bird.sound} and is ${bird.desc}`;
+    let dogSen = `This animal is a ${dog.name}. It has a sound of ${dog.sound} and is ${dog.desc}`;
+    let hippoSen = `This animal is a ${hippo.name}. It has a sound of ${hippo.sound} and is ${hippo.desc}`;
+
+    console.log(birdSen);
+    console.log(dogSen);
+    console.log(hippoSen);
+    
+//Exercise 27
+    console.info('%cExercise 27', 'color: white; background: grey;');
+
+    bird.sound = 4;
+    dog["sound"] = 9;
+
+    console.log(bird.sound);
+    console.log(dog.sound);
+    
+//Exercise 28
+    console.info('%cExercise 28', 'color: white; background: grey;');
+
+    let aniArr = [];
+    aniArr.push(bird, dog, hippo);
+    
+    for(let i = 0; i < aniArr.length; i++){
+        console.log("Name:", aniArr[i]["name"]);
+        console.log("Description:", aniArr[i]["desc"]);
+        console.log("Sound:", aniArr[i]["sound"]);
+    }
+   
+
