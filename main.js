@@ -410,6 +410,51 @@
         console.log("Name:", aniArr[i]["name"]);
         console.log("Description:", aniArr[i]["desc"]);
         console.log("Sound:", aniArr[i]["sound"]);
-    }
+    };
+    
+//Exercise 29
+    console.info('%cExercise 29', 'color: white; background: grey;');
+
+    num = Math.floor(Math.random() * 3);
+
+    console.log("Random animal: ", aniArr[num].name);
+
+    let num2 = Math.floor(Math.random() * 2) + 1;
+
+    console.log("Random property:", Object.keys(aniArr[num])[num2], aniArr[num][Object.keys(aniArr[num])[num2]]);
    
+//Exercise 30
+    console.info('%cExercise 30', 'color: white; background: grey;');
+
+    let quiz_questions = ["What is 9 + 10?", "How long is the average person pregnant for?"];
+    let quiz_answers = ["19", "9 months"];
+
+    //Object
+    let quiz_object = {
+        questions: quiz_questions,
+        answers: quiz_answers,
+        points: 0
+    };
+
+    document.addEventListener('keydown', (e) =>{
+        if (e.keyCode == 69){
+            quiz();
+        };
+    });
+
+    function quiz(){
+
+        quiz_object.points = 0;
+
+        for(let i = 0; i < quiz_object.questions.length; i++){
+            let question = prompt(quiz_object.questions[i]);
+
+            if(question == quiz_object.answers[i]){
+                quiz_object.points++
+            };
+        };
+
+        alert("You completed the quiz with: " + quiz_object.points + " points");
+    };
+
 
