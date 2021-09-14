@@ -457,4 +457,6 @@
         alert("You completed the quiz with: " + quiz_object.points + " points");
     };
 
+    console.log("Press E to begin the quiz");
+
 
