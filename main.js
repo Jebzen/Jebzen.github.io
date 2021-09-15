@@ -458,5 +458,89 @@
     };
 
     console.log("Press E to begin the quiz");
+   
+//Exercise 31
+    console.info('%cExercise 31', 'color: white; background: grey;');
 
+    let h1 = document.getElementById("h1");
+    let h2 = document.querySelector("#h2");
+    let h3 = document.getElementsByTagName("h3");
+    let h4 = document.querySelector("h4");
+    let h5 = document.getElementsByClassName("h5");
+    let h6 = document.querySelector(".h6");
 
+    console.log(h1,h2,h3,h4,h5,h6);
+    
+//Exercise 32
+    console.info('%cExercise 32', 'color: white; background: grey;');
+    console.log("See exercise 32");
+
+    document.querySelector("p").innerHTML = "Jeppe Emil Bentzen";
+    
+//Exercise 33
+    console.info('%cExercise 33', 'color: white; background: grey;');
+    console.log("See exercise 33");
+
+    let button = document.querySelector(".button1");
+
+    button.addEventListener('click', () => {
+        alert("Button 1");
+    });
+    
+//Exercise 34
+    console.info('%cExercise 34', 'color: white; background: grey;');
+    console.log("See exercise 34");
+
+    let button_1 = document.getElementById("id1");
+
+    button_1.addEventListener('click', () =>{
+        document.querySelector("body").classList.toggle("yellow_bg");
+    });
+
+//Lecture
+    console.info('%cLecture', 'color: white; background: grey;');
+
+    function calculator(num_1, num_2, operator){
+        switch(operator){
+            case "+":
+                return num_1 + num_2;
+                break;
+            case "-":
+                return num_1 - num_2;
+                break;
+            case "*":
+                return num_1 * num_2;
+                break;
+            case "/":
+                return num_1 / num_2;
+                break;
+            default:
+                console.error("Invalid operator");
+                return "Fuck you";
+                break;
+        }
+    };
+    
+    console.log(calculator(1, 1, "+"));
+    console.log(calculator(1, 1, "-"));
+    console.log(calculator(10, 10, "*"));
+    console.log(calculator(10, 10, "/"));
+    console.log(calculator(10, 10, "/+"));
+    
+//Exercise 35
+    console.info('%cExercise 35', 'color: white; background: grey;');
+    console.log("See exercise 35");
+
+    let ps = document.querySelectorAll(".p_1");
+
+    let xy = 0;
+
+    ps.forEach((i) => {
+        xy++;
+        console.log(i);
+        i.innerHTML = "Button " + xy;
+
+        i.addEventListener('click', () => {
+            console.log(i.innerHTML);
+        });
+    });
