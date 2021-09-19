@@ -51,9 +51,57 @@
 
         console.log("Press E to begin the quiz");
 */
-let HTML_body = document.querySelector("body");
-let input_field = document.getElementById("input_1");
+let begin_box = document.getElementById("begin_box");
+let begin_button = document.getElementById("button_1");
 
-HTML_body.addEventListener("onload", () => {
-    input_field.value = "Hello";
+let question_title = document.getElementById("question_title");
+let question = document.getElementById("question");
+let question_box = document.getElementById("question_box");
+
+let user_box = document.getElementById("user_box");
+
+let user = {
+    name: "",
+    points: 0
+}
+
+let quiz_data = {
+    questions: {
+        one: "",
+        two: "",
+        three: ""
+    },
+    answers: {
+        one: "",
+        two: "",
+        three: ""
+    }
+}
+
+function quiz(num){
+
+    switch (num){
+        case 0:
+            break;
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        default:
+            break;
+    }
+}
+
+begin_button.addEventListener("click", function(){
+    quiz(0);
+
+    begin_button.classList.add("d-none");
+
+});
+
+window.addEventListener("load", () => {
+    user_box.classList.add("d-none");
+    question_box.classList.add("d-none");
 })

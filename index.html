@@ -5,35 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A quiz program?</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>A quiz program (Exercise 30) - 20 studypoints</h1>
-    <h2>YOU NEED TO BE CREATIVE IN THIS HAND-INN! </h2>
-    <p>Create a program with 7 different event listeners.
-    </br>
-    Mark the word different, this means that you have to use different eventlisteners!
-    </br>
-    A eventlistener could be:
-    </br>
-    "Click event", "mouseover event", "keydown event".
-    </br>
-    your program should have:
-    </br>
-    string, number, array, object, array, callback functions, functions, input fields, buttons, images
-    </br>
-    Your program should be at least 250 lines of JavaScript code
-    </br>
-    You need to hand-inn the exercise as a  website and NOT code -  if I want to see your code, I can always find with Chrome Developer Tool.
-    </br>
-    This means that you have to hand-inn your assignment as a link.
-    </br>
-    The link has to be placed in a pdf-file. You can use your own domain if you have a domain, or you can use GitHub pages.
-    </br>
-    Good luck with the exercise</p>
 
-    <div>
-        <input type="text" name="" id="" value="">
-        <button>Button</button>
+    <div class="container my-5">
+        <div class="d-flex w-100 justify-content-center" id="begin_box">
+            <button class="btn btn-primary btn-lg" id="button_1">Begin Quiz</button>
+        </div>
+
+        <div class="my-2" id="user_box">
+            <h2>What is your name?</h2>
+            <input type="text" class="form-control">
+        </div>
+
+        <div class="my-2" id="question_box">
+            <h2 id="question_title">Question 1</h2>
+            <p id="question"></p>
+        </div>
     </div>
 
     <script src="main.js"></script>
