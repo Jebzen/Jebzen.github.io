@@ -51,3 +51,9 @@
 
         console.log("Press E to begin the quiz");
 */
+let HTML_body = document.querySelector("body");
+let input_field = document.getElementById("input_1");
+
+HTML_body.addEventListener("onload", () => {
+    input_field.value = "Hello";
+})
