@@ -11,18 +11,38 @@
 <body>
 
     <div class="container my-5">
+        <h3 class="my-3 text-center" id="username_box"></h3>
         <div class="d-flex w-100 justify-content-center" id="begin_box">
             <button class="btn btn-primary btn-lg" id="button_1">Begin Quiz</button>
         </div>
 
         <div class="my-2" id="user_box">
-            <h2>What is your name?</h2>
-            <input type="text" class="form-control">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-lg">
+                    <h2>What is your name?</h2>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Username" id="username_input">
+                        <button class="btn btn-primary" id="button_user">Submit</button>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
         </div>
 
         <div class="my-2" id="question_box">
-            <h2 id="question_title">Question 1</h2>
-            <p id="question"></p>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-lg">
+                    <h2 id="question_title">No Question</h2>
+                    <p id="question"></p>
+                    <input type="text" class="form-control">
+                    <div class="d-flex">
+                        <button class="btn btn-lg btn-primary my-2 ms-auto">Submit</button>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
         </div>
     </div>
 

@@ -59,49 +59,79 @@ let question = document.getElementById("question");
 let question_box = document.getElementById("question_box");
 
 let user_box = document.getElementById("user_box");
+let username_input = document.getElementById("username_input");
+let user_botton = document.getElementById("button_user");
 
 let user = {
     name: "",
     points: 0
-}
+};
 
 let quiz_data = {
-    questions: {
-        one: "",
-        two: "",
-        three: ""
-    },
-    answers: {
-        one: "",
-        two: "",
-        three: ""
-    }
-}
+    questions: [
+        "What was your name?",
+        "",
+        ""
+    ],
+    answers: [
+        "",
+        "",
+        ""
+    ],
+    stage: 0
+};
 
 function quiz(num){
 
     switch (num){
         case 0:
+            begin_button.classList.add("d-none");
+            user_box.classList.remove("d-none");
+            question_box.classList.add("d-none");
+
+            user.points = 0;
+            quiz_data.stage = 0;
             break;
+
         case 1:
+            begin_button.classList.add("d-none");
+            user_box.classList.add("d-none");
+            question_box.classList.remove("d-none");
+
+            quiz_data.stage = 1;
+            question_title.innerHTML = "Question " + quiz_data.stage;
+
+            question.innerHTML = quiz_data.questions[quiz_data.stage - 1];
             break;
+
         case 2:
             break;
+
         case 3:
             break;
+
         default:
             break;
     }
-}
+};
 
 begin_button.addEventListener("click", function(){
     quiz(0);
-
-    begin_button.classList.add("d-none");
-
 });
 
 window.addEventListener("load", () => {
     user_box.classList.add("d-none");
     question_box.classList.add("d-none");
-})
+    user.points = 0;
+});
+
+user_botton.addEventListener("click", function(){
+    user.name = username_input.value;
+    quiz_data.answers[0] = username_input.value;
+
+    quiz(1);
+});
+
+username_input.addEventListener("change", function(){
+
+});
