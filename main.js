@@ -51,100 +51,6 @@
 
         console.log("Press E to begin the quiz");
 */
-/*
-let error_input_username = document.getElementById("error-username");
-
-let begin_box = document.getElementById("begin_box");
-let begin_button = document.getElementById("button_1");
-
-let question_title = document.getElementById("question_title");
-let question = document.getElementById("question");
-let question_box = document.getElementById("question_box");
-
-let user_box = document.getElementById("user_box");
-let username_input = document.getElementById("username_input");
-let user_botton = document.getElementById("button_user");
-
-let user = {
-    name: "",
-    points: 0
-};
-
-let quiz_data = {
-    questions: [
-        "What was your name?",
-        "",
-        ""
-    ],
-    answers: [
-        "",
-        "",
-        ""
-    ],
-    stage: 0
-};
-
-let errors = {
-    username_input: ["Error, please fill in a username", "Error, you have to put in a username", "Error, username not valid", "Error, please fill in a authorized username"]
-};
-
-function quiz(num){
-
-    switch (num){
-        case 0:
-            begin_button.classList.add("d-none");
-            user_box.classList.remove("d-none");
-            question_box.classList.add("d-none");
-
-            user.points = 0;
-            quiz_data.stage = 0;
-            break;
-
-        case 1:
-            begin_button.classList.add("d-none");
-            user_box.classList.add("d-none");
-            question_box.classList.remove("d-none");
-
-            quiz_data.stage = 1;
-            question_title.innerHTML = "Question " + quiz_data.stage;
-
-            question.innerHTML = quiz_data.questions[quiz_data.stage - 1];
-            break;
-
-        case 2:
-            break;
-
-        case 3:
-            break;
-
-        default:
-            break;
-    }
-};
-
-begin_button.addEventListener("click", function(){
-    quiz(0);
-});
-
-window.addEventListener("load", () => {
-    user_box.classList.add("d-none");
-    question_box.classList.add("d-none");
-    user.points = 0;
-});
-
-user_botton.addEventListener("click", function(){
-    if(username_input.value != ""){
-        user.name = username_input.value;
-        quiz_data.answers[0] = username_input.value;
-
-        quiz(1);
-    } else{
-        error_input_username.innerHTML = errors.username_input[Math.floor(Math.random() * errors.username_input.length)];
-    }
-
-});
-
-*/
 
 let begin_box = document.getElementById("begin_box");
 let question_box = document.getElementById("question_box");
@@ -183,7 +89,7 @@ let quiz = {
     ],
     answers: [
         "", 
-        "2",
+        "10",
         "Javascript",
         "England",
         "Denmark",
@@ -253,31 +159,43 @@ let quiz = {
             return;
         }
 
-        let answer = answer_text_submission.value;
-        let quiz_answer = this.answers[this.stage - 1];
+        let answer = answer_text_submission.value.toLowerCase();
+        let quiz_answer = this.answers[this.stage - 1].toLowerCase(); 
 
-        if(answer == "" || answer == 0){
+        if(answer == ""){
             alert("No answer inputted");
         } else{
-            if(typeof(answer) == "string"){
-                answer = answer.toLowerCase;
-                quiz_answer = quiz_answer.toLowerCase;
-            };
+
             if(answer == quiz_answer){
                 console.info("Right answer!");
                 user.points++;
                 btn.right(this.stage);
+
             } else{
                 console.error("Wrong answer!");
                 btn.wrong(this.stage);
+
             }
+
             this.stage++
             this.question(this.stage);
+
         }
     },
 
     finish: function(){
         alert("You got",user.points,"points");
+    },
+
+    restart: function(){
+        alert("Restarting");
+        quiz.stage = 0;
+
+        user.points = 0;
+
+        for(let i = 1; i < 7; i++){
+            btn.not_accesed(i)
+        };
     }
 }
 
@@ -302,14 +220,14 @@ let btn ={
         query = "question_" + x;
         document.getElementById(query).classList.add("btn-secondary");
         document.getElementById(query).classList.remove("btn-success");
-        document.getElementById(query).classList.remove("btn-warning");
+        document.getElementById(query).classList.remove("btn-danger");
         document.getElementById(query).classList.remove("btn-info");
     },
     right: function(x){
         query = "question_" + x;
         document.getElementById(query).classList.remove("btn-secondary");
         document.getElementById(query).classList.add("btn-success");
-        document.getElementById(query).classList.remove("btn-warning");
+        document.getElementById(query).classList.remove("btn-danger");
         document.getElementById(query).classList.remove("btn-info");
     },
     wrong: function(x){
@@ -329,7 +247,7 @@ let btn ={
 }
 
 //user_box.classList.add("d-none");
-question_box.classList.add("d-none");
+//question_box.classList.add("d-none");
 
 begin_button.addEventListener("click", function(){
     quiz.start();
