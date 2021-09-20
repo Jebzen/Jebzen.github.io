@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <div class="container my-5">
+    <!-- <div class="container my-5">
         <h3 class="my-3 text-center" id="username_box"></h3>
         <div class="d-flex w-100 justify-content-center" id="begin_box">
             <button class="btn btn-primary btn-lg" id="button_1">Begin Quiz</button>
@@ -44,6 +44,45 @@
                 </div>
                 <div class="col"></div>
             </div>
+        </div>
+    </div> -->
+
+    <div class="py-3 my-5 container bg-warning shadow">
+        <div id="begin_box">
+            <h1 class="text-center text-uppercase fw-bold">Jeppe Emil Bentzen's Quiz program</h1>
+            <div class="d-flex justify-content-center py-3">
+                <button id="begin_button" class="btn btn-primary btn-lg">Begin Quiz</button>
+            </div>
+        </div>
+
+        <div id="question_box" class="row py-3">
+            <div class="col" id="question_navs">
+                <div class="w-100 d-flex justify-content-end p-1">
+                    <button class="btn btn-secondary" id="question_1">1</button>
+                </div>
+                <div class="w-100 d-flex justify-content-end p-1">
+                    <button class="btn btn-secondary" id="question_2">2</button>
+                </div>
+                <div class="w-100 d-flex justify-content-end p-1">
+                    <button class="btn btn-secondary" id="question_3">3</button>
+                </div>
+                <div class="w-100 d-flex justify-content-end p-1">
+                    <button class="btn btn-secondary" id="question_4">4</button>
+                </div>
+                <div class="w-100 d-flex justify-content-end p-1">
+                    <button class="btn btn-secondary" id="question_5">5</button>
+                </div>
+                <div class="w-100 d-flex justify-content-end p-1">
+                    <button class="btn btn-secondary" id="question_6">6</button>
+                </div>
+            </div>
+            <div class="col-8 submissions">
+                <h1 id="question_title">Question X</h1>
+                <h3 id="question_undertitle">What is a chair?</h3>
+                <input type="text" class="form-control" id="answer_text_submission" placeholder="Enter answer">
+                <button class="btn btn-primary my-3" id="answer_submission" onclick="quiz.answer()">Submit</button>
+            </div>
+            <div class="col"></div>
         </div>
     </div>
 
