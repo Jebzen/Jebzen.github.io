@@ -51,6 +51,8 @@
 
         console.log("Press E to begin the quiz");
 */
+let error_input_username = document.getElementById("error-username");
+
 let begin_box = document.getElementById("begin_box");
 let begin_button = document.getElementById("button_1");
 
@@ -79,6 +81,10 @@ let quiz_data = {
         ""
     ],
     stage: 0
+};
+
+let errors = {
+    username_input: ["Error, please fill in a username", "Error, you have to put in a username", "Error, username not valid", "Error, please fill in a authorized username"]
 };
 
 function quiz(num){
@@ -126,10 +132,15 @@ window.addEventListener("load", () => {
 });
 
 user_botton.addEventListener("click", function(){
-    user.name = username_input.value;
-    quiz_data.answers[0] = username_input.value;
+    if(username_input.value != ""){
+        user.name = username_input.value;
+        quiz_data.answers[0] = username_input.value;
 
-    quiz(1);
+        quiz(1);
+    } else{
+        error_input_username.innerHTML = errors.username_input[Math.floor(Math.random() * errors.username_input.length)];
+    }
+
 });
 
 username_input.addEventListener("change", function(){
