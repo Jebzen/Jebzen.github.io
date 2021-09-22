@@ -1,254 +1,110 @@
-/* 
-    1. 7 event listeners
+//Keydown event
+    let wacky_text = document.getElementById("wacky_text");
+    let colors = ["red", "blue", "yellow", "green", "purple", "pink", "black"]
 
-    2. Needs a:
-        * String
-        * Number
-        * Array
-        * Object
-        * Callback functions
-        * Functions
-        * Input Fields
-        * Buttons
-        * Images
+    document.addEventListener("keydown", function(){
+        /* 
+        let num = Math.floor(Math.random() * colors.length);
 
-    3. 250 lines of code
+        wacky_text.style.color = colors[num]; 
+        */
 
-    4. Previous exercise 30
-    
-        console.info('%cExercise 30', 'color: white; background: grey;');
+        let num_1 = Math.floor(Math.random() * 255);
+        let num_2 = Math.floor(Math.random() * 255);
+        let num_3 = Math.floor(Math.random() * 255);
+        let color = "rgb("+num_1+", "+num_2+", "+num_3+")";
 
-        let quiz_questions = ["What is 9 + 10?", "How long is the average person pregnant for?"];
-        let quiz_answers = ["19", "9 months"];
+        wacky_text.style.color = color;
+    });
 
-        //Object
-        let quiz_object = {
-            questions: quiz_questions,
-            answers: quiz_answers,
-            points: 0
-        };
+//Keypress event with pedro
+    let text_area = document.getElementById("text_area");
+    let sentence = "What the fuck did you just fucking say about me, you little bitch? I'll have you know I graduated top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I'm the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You're fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that's just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little 'clever' comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn't, you didn't, and now you're paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You're fucking dead, kiddo.";
 
-        document.addEventListener('keydown', (e) =>{
-            if (e.keyCode == 69){
-                quiz();
+    sentence = sentence.split(" ");
+    let num = 0;
+
+    text_area.addEventListener("keypress", function(event){
+        event.preventDefault();
+
+        if(num > sentence.length - 1){
+            num = 0;
+        }
+
+        text_area.value += sentence[num] + " ";
+        num++
+    });
+
+//load event for pedro & textarea
+    window.addEventListener("load", function(){
+        text_area.value = "";
+    })
+
+//click event for Whack A Mole
+    whackAMole = {
+        btn: document.getElementById("whack_btn"),
+        moles: document.querySelectorAll(".moles"),
+        points_span: document.getElementById("points_span"),
+        points: 0,
+        start: function(){
+            this.ongoing = true;
+
+            this.btn.classList.add("d-none");
+
+            this.points_span.classList.remove("d-none")
+
+            this.moles.forEach( function(arr){
+                arr.classList.add("d-none");
+            });
+
+            let num = Math.floor(Math.random() * whackAMole.moles.length);
+
+            this.moles[num].classList.remove("d-none")
+        },
+        ongoing: false,
+        hitMole: function(){
+            this.points++
+
+            this.moles.forEach( function(arr){
+                arr.classList.add("d-none");
+            });
+
+            let num = Math.floor(Math.random() * whackAMole.moles.length);
+
+            this.moles[num].classList.remove("d-none")
+
+            document.getElementById("points_span").innerHTML = "Points: " + this.points;
+        }
+    };
+
+    whackAMole.points_span.classList.add("d-none");
+
+    whackAMole.btn.addEventListener("click", function(){
+        whackAMole.start();
+    });
+
+    whackAMole.moles.forEach( function(event){
+        event.addEventListener("click", function(){
+            if(whackAMole.ongoing == true){
+                whackAMole.hitMole();
             };
         });
+    });
 
-        function quiz(){
+//Mouseover
+    let square = document.getElementById("square");
+    let section = document.getElementById("section");
+    let clone;
 
-            quiz_object.points = 0;
+    for(let i = 0; i < 37; i++){
+        clone = square.cloneNode(true);
+        section.appendChild(clone);
+    };
 
-            for(let i = 0; i < quiz_object.questions.length; i++){
-                let question = prompt(quiz_object.questions[i]);
+    let squares = document.querySelectorAll("svg");
+    squares.forEach( function(e){
+        e.addEventListener("mouseover", function (){
+            e.classList.remove("text-info");
+        });
+    });
 
-                if(question == quiz_object.answers[i]){
-                    quiz_object.points++
-                };
-            };
-
-            alert("You completed the quiz with: " + quiz_object.points + " points");
-        };
-
-        console.log("Press E to begin the quiz");
-*/
-
-let begin_box = document.getElementById("begin_box");
-let question_box = document.getElementById("question_box");
-let begin_button = document.getElementById("begin_button");
-let answer_text_submission = document.getElementById("answer_text_submission");
-let question_title = document.getElementById("question_title");
-let question_undertitle = document.getElementById("question_undertitle");
-
-let user = {
-    name: "",
-    points: 0
-};
-
-let quiz = {
-    on_going: false,
-    stage: 0,
-
-    start: function(){
-        getName();
-
-        begin_box.classList.add("d-none");
-        question_box.classList.remove("d-none");
-
-        this.on_going = true,
-        this.stage = 1;
-        this.question(1);
-    },
-
-    questions: [
-        "What is your name?", 
-        "How many fingers does the average person have?",
-        "What language is this quiz made in?",
-        "Where is London located",
-        "In which country do i live in",
-        "Which course is this?"
-    ],
-    answers: [
-        "", 
-        "10",
-        "Javascript",
-        "England",
-        "Denmark",
-        "Frontend"
-    ],
-
-    question: function(x){
-
-        if(user.name != ""){
-            this.answers[0] = user.name;
-        } else{
-            console.error("Error defining username");
-            return;
-        }
-
-        if(quiz.stage > 6){
-            alert("Quiz finished");
-            this.on_going = false;
-            return;
-        }
-
-        if(x > this.stage){
-            console.error("Cannot get to question")
-            return;
-        } else{
-            btn.info(this.stage);
-        }
-
-        switch(x){
-            case 1:
-                question_title.innerHTML = "Question 1";
-                question_undertitle.innerHTML = this.questions[0];
-                answer_text_submission.type = "text";
-                break;
-            case 2:
-                question_title.innerHTML = "Question 2";
-                question_undertitle.innerHTML = this.questions[1];
-                answer_text_submission.type = "number";
-                break;
-            case 3:
-                question_title.innerHTML = "Question 3";
-                question_undertitle.innerHTML = this.questions[2];
-                answer_text_submission.type = "text";
-                break;
-            case 4:
-                question_title.innerHTML = "Question 4";
-                question_undertitle.innerHTML = this.questions[3];
-                answer_text_submission.type = "text";
-                break;
-            case 5:
-                question_title.innerHTML = "Question 5";
-                question_undertitle.innerHTML = this.questions[4];
-                answer_text_submission.type = "text";
-                break;
-            case 6:
-                question_title.innerHTML = "Question 6";
-                question_undertitle.innerHTML = this.questions[5];
-                answer_text_submission.type = "text";
-                break;
-        }
-    },
-
-    answer: function(){
-
-        if(this.stage == 0 || this.stage > 6){
-            console.error("Quiz failed");
-            return;
-        }
-
-        let answer = answer_text_submission.value.toLowerCase();
-        let quiz_answer = this.answers[this.stage - 1].toLowerCase(); 
-
-        if(answer == ""){
-            alert("No answer inputted");
-        } else{
-
-            if(answer == quiz_answer){
-                console.info("Right answer!");
-                user.points++;
-                btn.right(this.stage);
-
-            } else{
-                console.error("Wrong answer!");
-                btn.wrong(this.stage);
-
-            }
-
-            this.stage++
-            this.question(this.stage);
-
-        }
-    },
-
-    finish: function(){
-        alert("You got",user.points,"points");
-    },
-
-    restart: function(){
-        alert("Restarting");
-        quiz.stage = 0;
-
-        user.points = 0;
-
-        for(let i = 1; i < 7; i++){
-            btn.not_accesed(i)
-        };
-    }
-}
-
-function getName(){
-    let name = prompt("Please enter your name");
-
-    if(name == null){
-        getName()
-    } else if(name == ""){ 
-        getName()
-    } else if(name != ""){
-        user.name = name;
-
-        alert("Hello " + user.name + " to my quiz");
-    } else{
-        getName()
-    }
-}
-
-let btn ={
-    not_accesed: function(x){
-        query = "question_" + x;
-        document.getElementById(query).classList.add("btn-secondary");
-        document.getElementById(query).classList.remove("btn-success");
-        document.getElementById(query).classList.remove("btn-danger");
-        document.getElementById(query).classList.remove("btn-info");
-    },
-    right: function(x){
-        query = "question_" + x;
-        document.getElementById(query).classList.remove("btn-secondary");
-        document.getElementById(query).classList.add("btn-success");
-        document.getElementById(query).classList.remove("btn-danger");
-        document.getElementById(query).classList.remove("btn-info");
-    },
-    wrong: function(x){
-        query = "question_" + x;
-        document.getElementById(query).classList.remove("btn-secondary");
-        document.getElementById(query).classList.remove("btn-success");
-        document.getElementById(query).classList.add("btn-danger");
-        document.getElementById(query).classList.remove("btn-info");
-    },
-    info: function(x){
-        query = "question_" + x;
-        document.getElementById(query).classList.remove("btn-secondary");
-        document.getElementById(query).classList.remove("btn-success");
-        document.getElementById(query).classList.remove("btn-danger");
-        document.getElementById(query).classList.add("btn-info");
-    }
-}
-
-//user_box.classList.add("d-none");
-question_box.classList.add("d-none");
-
-begin_button.addEventListener("click", function(){
-    quiz.start();
-});
