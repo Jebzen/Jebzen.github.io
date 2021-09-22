@@ -247,7 +247,7 @@ let btn ={
 }
 
 //user_box.classList.add("d-none");
-//question_box.classList.add("d-none");
+question_box.classList.add("d-none");
 
 begin_button.addEventListener("click", function(){
     quiz.start();
