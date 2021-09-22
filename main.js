@@ -108,3 +108,26 @@
         });
     });
 
+//Dobule click
+    let dbl_btn = document.getElementById("dbl_btn");
+
+    dbl_btn.addEventListener("dblclick", function(){
+        setTimeout(message, 1000);
+    })
+
+    const message = function() {  
+        alert("This message is shown after 1 second");
+    }
+
+//Mouseout
+    let boxes = document.querySelectorAll(".shadow");
+
+    boxes.forEach( function(e){
+        e.addEventListener("mouseout", function(){
+            if(e.classList.contains("shadow-lg")){
+                e.classList.remove("shadow-lg");
+            } else{
+                e.classList.add("shadow-lg");
+            }
+        })
+    })
