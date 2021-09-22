@@ -398,7 +398,7 @@
     dog["sound"] = 9;
 
     console.log(bird.sound);
-    console.log(dog.sound);
+    console.log(dog["sound"]);
     
 //Exercise 28
     console.info('%cExercise 28', 'color: white; background: grey;');
@@ -426,36 +426,31 @@
 //Exercise 30
     console.info('%cExercise 30', 'color: white; background: grey;');
 
-    let quiz_questions = ["What is 9 + 10?", "How long is the average person pregnant for?"];
-    let quiz_answers = ["19", "9 months"];
-
     //Object
-    let quiz_object = {
-        questions: quiz_questions,
-        answers: quiz_answers,
-        points: 0
+    let quiz = {
+        questions: ["What is 9 + 10?", "How long is the average person pregnant for?"],
+        answers: ["19", "9 months"],
+        points: 0,
+        start: function(){
+            this.points = 0;
+    
+            for(let i = 0; i < this.questions.length; i++){
+                let question = prompt(this.questions[i]);
+    
+                if(question.toLowerCase() == this.answers[i].toLowerCase()){
+                    this.points++
+                };
+            };
+    
+            alert("You completed the quiz with: " + this.points + " points");
+        }
     };
 
     document.addEventListener('keydown', (e) =>{
         if (e.keyCode == 69){
-            quiz();
+            quiz.start();
         };
     });
-
-    function quiz(){
-
-        quiz_object.points = 0;
-
-        for(let i = 0; i < quiz_object.questions.length; i++){
-            let question = prompt(quiz_object.questions[i]);
-
-            if(question == quiz_object.answers[i]){
-                quiz_object.points++
-            };
-        };
-
-        alert("You completed the quiz with: " + quiz_object.points + " points");
-    };
 
     console.log("Press E to begin the quiz");
    
