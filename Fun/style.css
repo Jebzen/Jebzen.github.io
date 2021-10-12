@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    height: 1700px;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    background-color: bisque;
+    margin: 1em;
+    padding: 1em;
+}
+
+.gallery{
+    background-color: cornflowerblue;
+    display: flex;
+    margin: 1em;
+    padding: 1em;
+    flex-wrap: wrap;
+}
+
+.box{
+    background-color: darksalmon;
+    display: flex;
+    margin: 1em;
+    padding: 1em;
+    flex-direction: column;
+}
+
+.box > img{
+    width: 150px;
+}
+.box > a > img{
+    width: 150px;
+}
+
+footer{
+    background-color: darkslateblue;
+    margin: 1em;
+    padding: 1em;
+}
