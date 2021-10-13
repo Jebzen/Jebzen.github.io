@@ -137,6 +137,7 @@ modal_form_create.addEventListener('submit', e => {
   db.collection('notes').add(note).then(() => 
   {
     modal_form_create.reset();
+    //Create_Modal.hide();
     Create_Modal.hide();
   }
     ).catch(err => 
