@@ -98,24 +98,17 @@ html, body{
 }
 
 #tictac-table{
-    border-spacing: 0.5rem;
+    width: 300px;
 }
 
 #tictac-table td{
-    background-color: pink;
-}
-
-.d-grid{
-    grid-template-columns: 150px 150px 150px;
-    grid-template-rows: 150px 150px 150px;
-    grid-gap: 10px;
-}
-
-.d-grid > div{
-    background-color: pink;
-    /*
-    padding: 0.5em;
-    margin: 0.5em;
-    */
-    height: 100%;
+    background-color: #c0dcff;
+    border: 1px dashed #8fb9ec;
+    font-family: 'Architects Daughter', cursive;
+    height: 100px;
+    width: 100px;
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 50px;
 }

@@ -16,13 +16,27 @@
 		*/
 
 		// global game variables
-		var player, fields, fieldsPlayed, fieldsPlayer0, fieldsPlayer1, msg, playButton;
+		var player, fields, fieldsPlayed, fieldsPlayer0, fieldsPlayer1, msg, playButton, stats;
+
+        //Find stats
+
+        stats= [];
+
+        if(localStorage && localStorage.getItem('stats')){
+            document.getElementById('leaderboard').innerHTML = "";
+
+            stats = JSON.parse(localStorage.getItem('stats'));
+
+            stats.forEach(element => {
+                document.getElementById('leaderboard').innerHTML += element + "<br>";
+            });
+        }
 
 		player = 0;
 
 		fields = [];
 		fields = document.getElementsByTagName('td');
-		console.log(fields);
+		//console.log(fields);
 
 		fieldsPlayed = [];
 		fieldsPlayer0 = [];
@@ -32,6 +46,7 @@
 
 		playButton = document.getElementById('playAgain').addEventListener('click', playAgain);
 
+        //For each field, add event play by clicking
 		for (let i = 0; i < fields.length; i++) {
 			fields[i].addEventListener('click', play)
 		}
@@ -39,18 +54,17 @@
 
 		function play() {
 			// game core mechanics, marking the fields
-			//console.log('Are you talking to me?');
 			if (fieldsPlayed.includes(this.id)) {
 				alert('No can do!')
 			}
 			if (player === 0 && !fieldsPlayed.includes(this.id)) {
 				this.innerHTML = 'X';
-				this.style.color = 'blue';
+				this.classList.add("text-primary");
 				fieldsPlayer0.push(parseInt(this.id));
 				player = 1
 			} else if (player === 1 && !fieldsPlayed.includes(this.id)) {
 				this.innerHTML = 'O';
-				this.style.color = 'red';
+				this.classList.add("text-danger");
 				fieldsPlayer1.push(parseInt(this.id));
 				player = 0
 			}
@@ -58,7 +72,7 @@
 			fieldsPlayed.push(this.id);
 			console.log(fieldsPlayed);
 
-			win()
+			win();
 		}
 
 		function win() {
@@ -75,7 +89,7 @@
 			) {
 				// player 0 won
 				msg.innerHTML = 'Player X won!';
-				gameOver();
+				gameOver(1);
 			} else if (
 				fieldsPlayer1.includes(1) && fieldsPlayer1.includes(2) && fieldsPlayer1.includes(3) ||
 				fieldsPlayer1.includes(4) && fieldsPlayer1.includes(5) && fieldsPlayer1.includes(6) ||
@@ -88,28 +102,31 @@
 			) {
 				// player 1 won
 				msg.innerHTML = 'Player O won!'
-				gameOver();
+				gameOver(2);
 			} else if (fieldsPlayed.length == 9) {
 				// game is a draw
 				msg.innerHTML = 'It\'s a draw!'
-				gameOver();
+				gameOver(0);
 			}
 
 		}
 
-		function gameOver() {
+		function gameOver(x) {
 			// ending the game 
 			for (let i = 0; i < fields.length; i++) {
 				fields[i].removeEventListener('click', play)
 			}
 
+            if(x === 1){
+                stats.push('x won');
+            } else{
+                stats.push('o won');
+            }
+            
+            localStorage.setItem( 'stats', JSON.stringify(stats));
 		}
 
 		function playAgain() {
 			// restart the game
 			window.location.reload(true)
-		}
-
-		function gameStats() {
-			// game stats using local storage
 		}
