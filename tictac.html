@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="d-flex">
+
+    <!-- Jebzen Navbar -->
+    <nav class="t-navbar" style="z-index: 1;">
+        <ul class="t-navbar-nav">
+
+            <li class="t-navbar-item">
+                <a href="event.html" class="t-navbar-link">
+                    <img src="/Illustrations/SVG/7 Event.svg" alt="7 Event Listeners" height="32" width="32">
+                    <span class="t-link-text">7 Event Listeners</span>
+                </a>
+            </li>
+
+            <li class="t-navbar-item">
+                <a href="index.html" class="t-navbar-link">
+                    <img src="/Illustrations/firebase-seeklogo.com.svg" alt="Firebase logo" height="32" width="32">
+                    <span class="t-link-text">Firebase</span>
+                </a>
+            </li>
+
+            <li class="t-navbar-item">
+                <a href="tictac.html" class="t-navbar-link">
+                    <img src="/node_modules/bootstrap-icons/icons/bootstrap.svg" alt="" height="32" width="32">
+                    <span class="t-link-text">Tic Tac Toe</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <!-- Main App Content -->
+    <main class="ms-6 d-flex w-100 flex-column">
+
+        <div class="container my-5 p-5">
+
+            <h1 class="text-center">TIC TAC TOE, 2 player</h1>
+            
+            <table width="400" class="table">
+                <tbody>
+                    <tr>
+                        <td id="1">&nbsp;</td>
+                        <td id="2">&nbsp;</td>
+                        <td id="3">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="4">&nbsp;</td>
+                        <td id="5">&nbsp;</td>
+                        <td id="6">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="7">&nbsp;</td>
+                        <td id="8">&nbsp;</td>
+                        <td id="9">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            <h2 id="msg">Click fields to play!</h2>
+            <p>
+                <button id="playAgain" class="btn btn-info">Play it again, Sam!</button>
+            </p>
+        </div>
+
+    </main>
+
+    <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/js/tictac.js"></script>
+</body>
+</html>
