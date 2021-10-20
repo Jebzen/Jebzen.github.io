@@ -96,3 +96,26 @@ html, body{
 .fa-secondary{
     transition: var(--transition-speed);
 }
+
+#tictac-table{
+    border-spacing: 0.5rem;
+}
+
+#tictac-table td{
+    background-color: pink;
+}
+
+.d-grid{
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+    grid-gap: 10px;
+}
+
+.d-grid > div{
+    background-color: pink;
+    /*
+    padding: 0.5em;
+    margin: 0.5em;
+    */
+    height: 100%;
+}
