@@ -112,3 +112,13 @@ html, body{
     vertical-align: middle;
     font-size: 50px;
 }
+
+#leaderboard_brid{
+    grid-template-columns: 1fr 1fr;
+    background-color: #c0dcff;
+    max-width: 150px;
+}
+#leaderboard_brid > div{
+    margin: 0.1em;
+    border: 1px dashed #8fb9ec;
+}
