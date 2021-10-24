@@ -122,3 +122,7 @@ html, body{
     margin: 0.1em;
     border: 1px dashed #8fb9ec;
 }
+
+#toDo_page > div{
+    max-width: 500px;
+}
