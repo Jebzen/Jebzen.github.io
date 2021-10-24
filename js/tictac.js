@@ -163,7 +163,7 @@ function gameOver(x) {
 
     if(x === 1){
         stats.push('X');
-    } else{
+    } else if(x == 2){
         stats.push('O');
     }
     
