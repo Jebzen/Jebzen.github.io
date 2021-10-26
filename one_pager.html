@@ -21,6 +21,13 @@
         .filtered{
             display: none !important;
         }
+        html { 
+            height: 100% !important; 
+            overflow: auto !important; 
+        }
+        body { 
+            height: 100% !important; 
+        }
     </style> 
     <link rel="stylesheet" href="/css/style.css?v=1">
 </head>
@@ -66,13 +73,13 @@
         
         <!-- Page Switch -->
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow ms-6 fixed-top">
             <div class="container-fluid">
             <div class="d-flex justify-content-center w-100">
                 <button class="btn btn-outline-info btn-lg mx-3 active" id="toDo_btn">
                     To do list
                 </button>
-                <button class="btn btn-outline-primary btn-lg mx-3" id="quiz_btn">
+                <button class="btn btn-outline-warning btn-lg mx-3" id="quiz_btn">
                     Quiz
                 </button>
             </div>
@@ -81,13 +88,13 @@
 
         <!--App 1 | To do-->
 
-        <div class="bg-info h-100" id="toDo_page">
+        <div class="bg-info h-100 pt-5" id="toDo_page">
         <div class="container my-5">
             
             <header class="text-center text-light my-4">
                 <h1 class="mb-4">Todo List</h1>
                 <form class="search">
-                    <input class="form-control m-auto" type="text" name="search" placeholder="search todos" />
+                    <input class="form-control m-auto" type="text" name="search" placeholder="Search todos" />
                 </form>
             </header>
         
@@ -98,74 +105,117 @@
                 </li>
             </ul>
         
-            <form class="add text-center my-4">
-                <label class="text-light">Add a new todo...</label>
-                <input class="form-control m-auto" type="text" name="add" />
-            </form>
+            <div class="d-flex flex-column">
+                <label for="addToDo" class="mt-4 form-label">Add a new todo...</label>
+                <form class="add text-center mb-4 btn-group">
+                    <input class="form-control" type="text" name="add" id="addToDo"/>
+                    <input type="submit" value="Add" class="btn btn-primary" value="Add">
+                </form>
+            </div>
 
         </div>
         </div>
 
         <!--App 2 | Quiz-->
 
-        <div class="bg-primary d-none" id="quiz_page">
-        <div class="container my-5">
-            <div class="result py-4 d-none text-center bg-light rounded shadow">
+        <div class="bg-warning d-none py-5" id="quiz_page">
+        <div class="row my-5 py-5">
+            <div class="result py-4 d-none text-center bg-light rounded shadow col-7 mx-auto">
                 <div class="container lead">
-                    <p>You are <span class="text-primary display-4 p-3">0%</span> ninja</p>
+                    <p>You are <span class="text-primary display-4 p-3">0%</span> correct</p>
                 </div>
             </div>
 
-            <div class="quiz py-4">
-                <h2 class="my-5 text-white">On with the questions...</h2>
+            <div class="quiz py-4 col-7 mx-auto">
+                <h2 class="my-5 text-black">On with the questions...</h2>
         
-                <form class="quiz-form text-light">
-                    <div class="my-5">
-                        <p class="lead font-weight-normal">1. How do you give a ninja directions?</p>
-                        <div class="form-check my-2 text-white-50">
-                            <input type="radio" name="q1" value="A">
-                            <label class="form-check-label">Show them a map</label>
+                <form class="quiz-form text-black row">
+                    <div class="my-3 col-6 p-3">
+                        <p class="lead font-weight-normal">1. What is my internet username?</p>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q1" value="A" id="q1_1" class="form-check-input" checked>
+                            <label class="form-check-label" for="q1_1">Jebzen</label>
                         </div>
-                        <div class="form-check my-2 text-white-50">
-                            <input type="radio" name="q1" value="B">
-                            <label class="form-check-label">Don't worry, the ninja will find you</label>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q1" value="B" id="q1_2" class="form-check-input">
+                            <label class="form-check-label" for="q1_2">James Foreigner</label>
                         </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q1" value="C" id="q1_3" class="form-check-input">
+                            <label class="form-check-label" for="q1_3">Jeb Foreigner</label>
+                        </div>
+
                     </div>
-                    <div class="my-5">
-                        <p class="lead font-weight-normal">2. If a ninja has 3 apples, then gives one to Mario & one to Yoshi, how many apples does the ninja have left?</p>
-                        <div class="form-check my-2 text-white-50">
-                            <input type="radio" name="q2" value="A">
-                            <label class="form-check-label">1 apple</label>
+
+                    <div class="my-3 col-6 p-3">
+                        <p class="lead font-weight-normal">2. What am i working as?</p>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q2" value="A" id="q2_1" class="form-check-input" checked>
+                            <label class="form-check-label" for="q2_1">A WordPress creator</label>
                         </div>
-                        <div class="form-check my-2 text-white-50">
-                            <input type="radio" name="q2" value="B">
-                            <label class="form-check-label">3 apples, and two corpses</label>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q2" value="B" id="q2_2" class="form-check-input">
+                            <label class="form-check-label" for="q2_2">A rich media speicalist</label>
                         </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q2" value="C" id="q2_3" class="form-check-input">
+                            <label class="form-check-label" for="q2_3">A Web Developer</label>
+                        </div>
+
                     </div>
-                    <div class="my-5">
-                        <p class="lead font-weight-normal">3. How do you know when you've met a ninja?</p>
-                        <div class="form-check my-2 text-white-50">
-                            <input type="radio" name="q3" value="A">
-                            <label class="form-check-label">You'll recognize the outfit</label>
+
+                    <div class="my-3 col-6 p-3">
+                        <p class="lead font-weight-normal">3. What is my goal in life?</p>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q3" value="A" id="q3_1" class="form-check-input" checked>
+                            <label class="form-check-label" for="q3_1">Stability in life</label>
                         </div>
-                        <div class="form-check my-2 text-white-50">
-                            <input type="radio" name="q3" value="B">
-                            <label class="form-check-label">The grim reaper will tell you</label>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q3" value="B" id="q3_2" class="form-check-input">
+                            <label class="form-check-label" for="q3_2">Love</label>
                         </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q3" value="C" id="q3_3" class="form-check-input">
+                            <label class="form-check-label" for="q3_3">To become 101 years old</label>
+                        </div>
+
                     </div>
-                    <div class="my-5">
-                        <p class="lead font-weight-normal">4. What's a ninja's favourite array method?</p>
-                        <div class="form-check my-2 text-white-50">
-                            <input type="radio" name="q4" value="A">
-                            <label class="form-check-label">forEach()</label>
+
+                    <div class="my-3 col-6 p-3">
+                        <p class="lead font-weight-normal">4. What is my middle name?</p>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q4" value="A" id="q4_1" class="form-check-input" checked>
+                            <label class="form-check-label" for="q4_1">Jens</label>
                         </div>
-                        <div class="form-check my-2 text-white-50">
-                            <input type="radio" name="q4" value="B">
-                            <label class="form-check-label">slice()</label>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q4" value="B" id="q4_2" class="form-check-input">
+                            <label class="form-check-label" for="q4_2">Møller / Moeller</label>
                         </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q4" value="C" id="q4_3" class="form-check-input">
+                            <label class="form-check-label" for="q4_3">Emil</label>
+                        </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q4" value="D" id="q4_4" class="form-check-input">
+                            <label class="form-check-label" for="q4_4">Foreigner</label>
+                        </div>
+
                     </div>
                     <div class="text-center">
-                        <input type="submit" class="btn btn-light"> 
+                        <input type="submit" class="btn btn-primary btn-lg" value="End quiz"> 
                     </div>
                 </form>
             </div>

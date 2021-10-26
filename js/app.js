@@ -43,7 +43,7 @@
     }
 
 //Quiz
-    const correctAnswers = ['B', 'B', 'B', 'B'];
+    const correctAnswers = ['A', 'B', 'C', 'C'];
     const form = document.querySelector('.quiz-form');
     const result = document.querySelector('.result');
 
@@ -74,6 +74,7 @@
             }
         }, 10);
 
+        window.scrollTo({ top: 0, behavior: 'smooth'});
     });
 
 //To do
