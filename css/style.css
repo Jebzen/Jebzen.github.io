@@ -19,6 +19,7 @@ html, body{
     position: fixed;
     transition: width 200ms ease;
     background-color: var(--bg-primary);
+    z-index: 10000;
 }
 
 /* Navbar-nav */
