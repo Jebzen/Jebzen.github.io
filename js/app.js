@@ -5,10 +5,6 @@
     const toDoBtn = document.getElementById("toDo_btn");
     const quizBtn = document.getElementById("quiz_btn");
 
-    let page = {
-        current: "toDo"
-    };
-
     quizBtn.addEventListener('click',  () =>{
         switchPage(1)
     });
@@ -20,8 +16,6 @@
     function switchPage(x){
 
         if(x == 1){
-            //page.current = "toDo";
-            //console.log(page.current);
 
             toDoPage.classList.add('d-none');
             toDoBtn.classList.remove('active');
@@ -30,8 +24,6 @@
             quizBtn.classList.add('active');
 
         } else if (x == 2){
-            page.current = "quiz";
-            console.log(page.current);
 
             toDoPage.classList.remove('d-none');
             toDoBtn.classList.add('active');
