@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Tic Tac Toe</title>
+	<style type="text/css">
+		body {
+			background-color: #CBC6A7;
+		}
+
+		h1,
+		h2 {
+			font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+		}
+
+		table {
+			width: 50%;
+			border-collapse: collapse;
+		}
+
+		td {
+			border: 6px solid white;
+			width: 33.333%;
+			font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+			text-align: center;
+			font-size: 5em;
+			vertical-align: middle;
+		}
+
+		/* https://spin.atomicobject.com/2015/07/14/css-responsive-square/ */
+		td:after {
+			content: "";
+			display: block;
+			padding-bottom: 10%;
+		}
+
+		td:first-of-type {
+			border-left-color: transparent;
+			border-top-color: transparent;
+		}
+
+		td:nth-of-type(2) {
+			border-top-color: transparent;
+		}
+
+		td:nth-of-type(3) {
+			border-right-color: transparent;
+			border-top-color: transparent;
+		}
+
+		tr:nth-of-type(3) td {
+			border-bottom-color: transparent;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>TIC TAC TOE, 2 player</h1>
+	<table width="400" border="1">
+		<tbody>
+			<tr>
+				<td id="1">&nbsp;</td>
+				<td id="2">&nbsp;</td>
+				<td id="3">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="4">&nbsp;</td>
+				<td id="5">&nbsp;</td>
+				<td id="6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td id="7">&nbsp;</td>
+				<td id="8">&nbsp;</td>
+				<td id="9">&nbsp;</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2 id="msg">Click fields to play!</h2>
+	<p><button id="playAgain">Play it again, Sam!</button></p>
+	<!-- GAME STATISTICS (local storage)-->
+	<hr>
+	<p>Player 1 score: <span id="player1"></span></p>
+	<p>Player 2 score: <span id="player2"></span></p>
+	<p>Draw: <span id="draw"></span></p>
+	<script>
+
+		/*
+		
+		Stuff to handle ;-):
+		1. Make the fields clickable (player0 uses "X", player1 "0")
+		2. Keep track of all used fields (fieldsPlayed) and of the fields each player chose (fieldsPlayer1, fieldsPlayer2)
+		3. Avoid that úsed fields can be played again and implement feedback like "Field already taken" (alert();)
+		4. Check for winning combinations
+		5. Implement feedback to the players (winning or game is a draw)
+		6. End the game, avoid further playing
+		7. Add a "Play again button"
+		8. Implement "eternal" game statistics (using local storage!)
+		9. Style the game as fancy and responsive as you can ;-)
+		
+		*/
+
+		// global game variables
+		var player, fields, fieldsPlayed, fieldsPlayer1, fieldsPlayer2, msg, playButton;
+		// global statistics variables
+		var p1Stats, p2Stats, drawStats;
+
+		player = 1;
+
+		fields = [];
+		fields = document.getElementsByTagName('td');
+		console.log(fields);
+
+		fieldsPlayed = [];
+		fieldsPlayer1 = [];
+		fieldsPlayer2 = [];
+
+		msg = document.getElementById('msg');
+
+		playButton = document.getElementById('playAgain').addEventListener('click', playAgain);
+		// statistics display
+		p1Stats = document.getElementById('player1');
+		p2Stats = document.getElementById('player2');
+		drawStats = document.getElementById('draw');
+
+		for (let i = 0; i < fields.length; i++) {
+			fields[i].addEventListener('click', play)
+		}
+
+
+		function play() {
+			// game core mechanics, marking the fields
+			//console.log('Are you talking to me?');
+			if (fieldsPlayed.includes(this.id)) {
+				alert('No can do!')
+			}
+			if (player === 0 && !fieldsPlayed.includes(this.id)) {
+				this.innerHTML = 'X';
+				this.style.color = 'blue';
+				fieldsPlayer1.push(parseInt(this.id));
+				player = 1
+			} else if (player === 1 && !fieldsPlayed.includes(this.id)) {
+				this.innerHTML = 'O';
+				this.style.color = 'red';
+				fieldsPlayer2.push(parseInt(this.id));
+				player = 0
+			}
+
+			fieldsPlayed.push(this.id);
+			console.log(fieldsPlayed);
+
+			win()
+		}
+
+		function win() {
+			// analyzing field choices, winning conditions, feedback
+			if (
+				fieldsPlayer1.includes(1) && fieldsPlayer1.includes(2) && fieldsPlayer1.includes(3) ||
+				fieldsPlayer1.includes(4) && fieldsPlayer1.includes(5) && fieldsPlayer1.includes(6) ||
+				fieldsPlayer1.includes(7) && fieldsPlayer1.includes(8) && fieldsPlayer1.includes(9) ||
+				fieldsPlayer1.includes(1) && fieldsPlayer1.includes(4) && fieldsPlayer1.includes(7) ||
+				fieldsPlayer1.includes(2) && fieldsPlayer1.includes(5) && fieldsPlayer1.includes(8) ||
+				fieldsPlayer1.includes(3) && fieldsPlayer1.includes(6) && fieldsPlayer1.includes(9) ||
+				fieldsPlayer1.includes(1) && fieldsPlayer1.includes(5) && fieldsPlayer1.includes(9) ||
+				fieldsPlayer1.includes(3) && fieldsPlayer1.includes(5) && fieldsPlayer1.includes(7)
+			) {
+				// player 1 won
+				msg.innerHTML = 'Player 1 won!';
+				// statistics update
+				let player1score = localStorage.getItem('player1'); // get the value from local storage
+				player1score++; // increment the value
+				localStorage.setItem('player1', player1score); // submit the value to local storage
+				gameOver();
+			} else if (
+				fieldsPlayer2.includes(1) && fieldsPlayer2.includes(2) && fieldsPlayer2.includes(3) ||
+				fieldsPlayer2.includes(4) && fieldsPlayer2.includes(5) && fieldsPlayer2.includes(6) ||
+				fieldsPlayer2.includes(7) && fieldsPlayer2.includes(8) && fieldsPlayer2.includes(9) ||
+				fieldsPlayer2.includes(1) && fieldsPlayer2.includes(4) && fieldsPlayer2.includes(7) ||
+				fieldsPlayer2.includes(2) && fieldsPlayer2.includes(5) && fieldsPlayer2.includes(8) ||
+				fieldsPlayer2.includes(3) && fieldsPlayer2.includes(6) && fieldsPlayer2.includes(9) ||
+				fieldsPlayer2.includes(1) && fieldsPlayer2.includes(5) && fieldsPlayer2.includes(9) ||
+				fieldsPlayer2.includes(3) && fieldsPlayer2.includes(5) && fieldsPlayer2.includes(7)
+			) {
+				// player 2 won
+				msg.innerHTML = 'Player 2 won!';
+				// statistics update
+				let player2score = localStorage.getItem('player2'); // get the value from local storage
+				player2score++; // increment the value
+				localStorage.setItem('player2', player2score); // submit the value to local storage
+				gameOver();
+			} else if (fieldsPlayed.length == 9) {
+				// game is a draw
+				msg.innerHTML = 'It\'s a draw!';
+				// statistics update
+				let drawscore = localStorage.getItem('draw'); // get the value from local storage
+				drawscore++; // increment the value
+				localStorage.setItem('draw', drawscore); // submit the value to local storage
+				gameOver();
+			}
+
+		}
+
+		function gameOver() {
+			// ending the game 
+			for (let i = 0; i < fields.length; i++) {
+				fields[i].removeEventListener('click', play)
+			}
+
+		}
+
+		function playAgain() {
+			// restart the game
+			window.location.reload(true)
+		}
+
+		function gameStats() {
+			// game stats using local storage
+
+			// preparing local storage
+			if (!localStorage.getItem('player1')) {
+				localStorage.setItem('player1', 0);
+				localStorage.setItem('player2', 0);
+				localStorage.setItem('draw', 0);
+			}
+			// reading from local storage
+			let player1score = localStorage.getItem('player1');
+			let player2score = localStorage.getItem('player2');
+			let drawscore = localStorage.getItem('draw');
+
+			// displaying the values from local storage
+			p1Stats.innerHTML = player1score;
+			p2Stats.innerHTML = player2score;
+			drawStats.innerHTML = drawscore;
+		}
+
+		// initializing game stats
+		gameStats();
+	</script>
+</body>
+
+</html>
