@@ -70,9 +70,9 @@ function display() {
         case 0:
             return "It's a draw!";
         case 1:
-            return "Player won!";
+            return "<span class='text-success'>Player won!</span>";
         case 2:
-            return "Computer won!";
+            return "<span class='text-danger'>Computer won!</span>";
         default:
             return "<b class='text-danger'>ERROR</b>";
     }
