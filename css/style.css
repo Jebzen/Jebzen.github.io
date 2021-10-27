@@ -19,6 +19,7 @@ html, body{
     position: fixed;
     transition: width 200ms ease;
     background-color: var(--bg-primary);
+    z-index: 10000;
 }
 
 /* Navbar-nav */
@@ -95,4 +96,34 @@ html, body{
 .fa-primary,
 .fa-secondary{
     transition: var(--transition-speed);
+}
+
+#tictac-table{
+    width: 300px;
+}
+
+#tictac-table td{
+    background-color: #c0dcff;
+    border: 1px dashed #8fb9ec;
+    font-family: 'Architects Daughter', cursive;
+    height: 100px;
+    width: 100px;
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 50px;
+}
+
+#leaderboard_brid{
+    grid-template-columns: 1fr 1fr;
+    background-color: #c0dcff;
+    max-width: 150px;
+}
+#leaderboard_brid > div{
+    margin: 0.1em;
+    border: 1px dashed #8fb9ec;
+}
+
+#toDo_page > div{
+    max-width: 500px;
 }

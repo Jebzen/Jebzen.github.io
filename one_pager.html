@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One page application</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/1074464598714048512/X4dRMX6f_400x400.jpg" type="image/x-icon">
+    <style>
+        input[type=text],
+        input[type=text]:focus{
+            color: #fff;
+            border: none;
+            color: black;
+        }
+        .delete{
+            cursor: pointer;
+        }
+        .filtered{
+            display: none !important;
+        }
+        html { 
+            height: 100% !important; 
+            overflow: auto !important; 
+        }
+        body { 
+            height: 100% !important; 
+        }
+    </style> 
+    <link rel="stylesheet" href="/css/style.css?v=1">
+</head>
+<body class="d-flex">
+
+    <!-- Jebzen Navbar -->
+    <nav class="t-navbar">
+        <ul class="t-navbar-nav">
+
+            <li class="t-navbar-item">
+                <a href="event.html" class="t-navbar-link">
+                    <img src="/Illustrations/SVG/7 Event.svg" alt="7 Event Listeners" height="32" width="32">
+                    <span class="t-link-text">7 Event Listeners</span>
+                </a>
+            </li>
+
+            <li class="t-navbar-item">
+                <a href="index.html" class="t-navbar-link">
+                    <img src="/Illustrations/firebase-seeklogo.com.svg" alt="Firebase logo" height="32" width="32">
+                    <span class="t-link-text">Firebase</span>
+                </a>
+            </li>
+
+            <li class="t-navbar-item">
+                <a href="tictac.html" class="t-navbar-link">
+                    <img src="https://miro.medium.com/max/395/1*mIjIjWIUc45MQjLDVkOC-w.png" alt="" height="32" width="32">
+                    <span class="t-link-text">Tic Tac Toe</span>
+                </a>
+            </li>
+
+            <li class="t-navbar-item">
+                <a href="one_pager.html" class="t-navbar-link">
+                    <img src="https://pbs.twimg.com/profile_images/1074464598714048512/X4dRMX6f_400x400.jpg" alt="" height="32" width="32">
+                    <span class="t-link-text">One Pager</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <!-- Main App Content -->
+    <main class="ms-6 d-flex w-100 flex-column">
+        
+        <!-- Page Switch -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow ms-6 fixed-top">
+            <div class="container-fluid">
+            <div class="d-flex justify-content-center w-100">
+                <button class="btn btn-outline-info btn-lg mx-3 active" id="toDo_btn">
+                    To do list
+                </button>
+                <button class="btn btn-outline-warning btn-lg mx-3" id="quiz_btn">
+                    Quiz
+                </button>
+            </div>
+            </div>
+        </nav>
+
+        <!--App 1 | To do-->
+
+        <div class="bg-info h-100 pt-5" id="toDo_page">
+        <div class="container my-5">
+            
+            <header class="text-center text-light my-4">
+                <h1 class="mb-4">Todo List</h1>
+                <form class="search">
+                    <input class="form-control m-auto" type="text" name="search" placeholder="Search todos" />
+                </form>
+            </header>
+        
+            <ul class="list-group todos mx-auto text-light">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Dummy</span>
+                    <i class="far fa-trash-alt text-danger delete">Delete</i>
+                </li>
+            </ul>
+        
+            <div class="d-flex flex-column">
+                <label for="addToDo" class="mt-4 form-label">Add a new todo...</label>
+                <form class="add text-center mb-4 btn-group">
+                    <input class="form-control" type="text" name="add" id="addToDo"/>
+                    <input type="submit" value="Add" class="btn btn-primary" value="Add">
+                </form>
+            </div>
+
+        </div>
+        </div>
+
+        <!--App 2 | Quiz-->
+
+        <div class="bg-warning d-none py-5" id="quiz_page">
+        <div class="row my-5 py-5">
+            <div class="result py-4 d-none text-center bg-light rounded shadow col-7 mx-auto">
+                <div class="container lead">
+                    <p>You are <span class="text-primary display-4 p-3">0%</span> correct</p>
+                </div>
+            </div>
+
+            <div class="quiz py-4 col-7 mx-auto">
+                <h2 class="my-5 text-black">On with the questions...</h2>
+        
+                <form class="quiz-form text-black row">
+                    <div class="my-3 col-6 p-3">
+                        <p class="lead font-weight-normal">1. What is my internet username?</p>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q1" value="A" id="q1_1" class="form-check-input" checked>
+                            <label class="form-check-label" for="q1_1">Jebzen</label>
+                        </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q1" value="B" id="q1_2" class="form-check-input">
+                            <label class="form-check-label" for="q1_2">James Foreigner</label>
+                        </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q1" value="C" id="q1_3" class="form-check-input">
+                            <label class="form-check-label" for="q1_3">Jeb Foreigner</label>
+                        </div>
+
+                    </div>
+
+                    <div class="my-3 col-6 p-3">
+                        <p class="lead font-weight-normal">2. What am i working as?</p>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q2" value="A" id="q2_1" class="form-check-input" checked>
+                            <label class="form-check-label" for="q2_1">A WordPress creator</label>
+                        </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q2" value="B" id="q2_2" class="form-check-input">
+                            <label class="form-check-label" for="q2_2">A rich media speicalist</label>
+                        </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q2" value="C" id="q2_3" class="form-check-input">
+                            <label class="form-check-label" for="q2_3">A Web Developer</label>
+                        </div>
+
+                    </div>
+
+                    <div class="my-3 col-6 p-3">
+                        <p class="lead font-weight-normal">3. What is my goal in life?</p>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q3" value="A" id="q3_1" class="form-check-input" checked>
+                            <label class="form-check-label" for="q3_1">Stability in life</label>
+                        </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q3" value="B" id="q3_2" class="form-check-input">
+                            <label class="form-check-label" for="q3_2">Love</label>
+                        </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q3" value="C" id="q3_3" class="form-check-input">
+                            <label class="form-check-label" for="q3_3">To become 101 years old</label>
+                        </div>
+
+                    </div>
+
+                    <div class="my-3 col-6 p-3">
+                        <p class="lead font-weight-normal">4. What is my middle name?</p>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q4" value="A" id="q4_1" class="form-check-input" checked>
+                            <label class="form-check-label" for="q4_1">Jens</label>
+                        </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q4" value="B" id="q4_2" class="form-check-input">
+                            <label class="form-check-label" for="q4_2">Møller / Moeller</label>
+                        </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q4" value="C" id="q4_3" class="form-check-input">
+                            <label class="form-check-label" for="q4_3">Emil</label>
+                        </div>
+
+                        <div class="form-check my-2 text-black-50">
+                            <input type="radio" name="q4" value="D" id="q4_4" class="form-check-input">
+                            <label class="form-check-label" for="q4_4">Foreigner</label>
+                        </div>
+
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-primary btn-lg" value="End quiz"> 
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        </div>
+
+    </main>
+
+    <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
