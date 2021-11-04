@@ -32,20 +32,6 @@ var myGame = {
 	compare: function(){
 		let player = this.userChoice;
 		let computer = this.computerChoice;
-		/*
-		let rock = {
-			weak: "paper",
-			strong: "scissor"
-		}
-		let paper = {
-			weak: "scissor",
-			strong: "rock"
-		}
-		let scissor = {
-			weak: "rock",
-			strong: "paper"
-		}
-		*/
 
 		if(player == computer)
 		{

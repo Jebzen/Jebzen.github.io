@@ -10,40 +10,84 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Jebzen Navbar -->
+    <nav class="t-navbar">
+        <ul class="t-navbar-nav">
+
+            <li class="t-navbar-item">
+                <a href="event.html" class="t-navbar-link">
+                    <img src="Illustrations/SVG/7 Event.svg" alt="7 Event Listeners" height="32" width="32">
+                    <span class="t-link-text">7 Event Listeners</span>
+                </a>
+            </li>
+
+            <li class="t-navbar-item">
+                <a href="index.html" class="t-navbar-link">
+                    <img src="Illustrations/firebase-seeklogo.com.svg" alt="Firebase logo" height="32" width="32">
+                    <span class="t-link-text">Firebase</span>
+                </a>
+            </li>
+
+            <li class="t-navbar-item">
+                <a href="tictac.html" class="t-navbar-link">
+                    <img src="https://miro.medium.com/max/395/1*mIjIjWIUc45MQjLDVkOC-w.png" alt="" height="32" width="32">
+                    <span class="t-link-text">Tic Tac Toe</span>
+                </a>
+            </li>
+
+            <li class="t-navbar-item">
+                <a href="one_pager.html" class="t-navbar-link">
+                    <img src="https://pbs.twimg.com/profile_images/1074464598714048512/X4dRMX6f_400x400.jpg" alt="" height="32" width="32">
+                    <span class="t-link-text">One Pager</span>
+                </a>
+            </li>
+
+            <li class="t-navbar-item">
+                <a href="rockpaper.html" class="t-navbar-link">
+                    <img src="https://media.istockphoto.com/vectors/rock-paper-scissors-vector-illustration-vector-id1056840214?k=20&m=1056840214&s=170667a&w=0&h=XHMBHLV9gIpRoEvQfa4eMN-h2hfAqXx0gZ88YuU9Tmk=" alt="" height="32" width="32">
+                    <span class="t-link-text">Rock/paper/scissor</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
     <main class="container my-5">
-        <div class="btn-group">
-            <button class="btn btn-outline-warning" id="rockBtn">
-                Rock
-            </button>
-            <button class="btn btn-outline-success" id="paperBtn">
-                Paper
-            </button>
-            <button class="btn btn-outline-danger" id="scissorBtn">
-                Scissors
-            </button>
+        <div class="d-flex justify-content-center">
+            <div class="btn-group">
+                <button class="btn btn-lg btn-warning" id="rockBtn">
+                    Rock
+                </button>
+                <button class="btn btn-lg btn-success" id="paperBtn">
+                    Paper
+                </button>
+                <button class="btn btn-lg btn-danger" id="scissorBtn">
+                    Scissors
+                </button>
+            </div>
         </div>
 
         <br>
     
-        <h3>Computer:</h3>
-        <div id="computer_choice"></div>
+        <h3 class="text-center">COMPUTER</h3>
+        <h4 class="text-center" id="computer_choice" class="fs-4"></h4>
         
         <br>
         
-        <h3>Player:</h3>
-        <div id="player_choice"></div>
+        <h3 class="text-center">PLAYER</h3>
+        <h4 class="text-center" id="player_choice" class="fs-4"></h4>
     
         <br>
     
-        <h3>Result:</h3>
-        <div id="result"></div>
+        <h3 class="text-center">RESULT</h3>
+        <h4 class="text-center" id="result" class="fs-4"></h4>
 
         <br>
 
-        <h3>Statiscs:</h3>
-        <p>Player procent: <span id="playerPro"></span>%</p>
-        <p>Computer procent: <span id="computerPro"></span>%</p>
-        <p>Draw procent: <span id="drawPro"></span>%</p>
+        <h3 class="text-muted">Statiscs:</h3>
+        <p class="text-muted fst-italic">Player procent: <span id="playerPro"></span>%</p>
+        <p class="text-muted fst-italic">Computer procent: <span id="computerPro"></span>%</p>
+        <p class="text-muted fst-italic">Draw procent: <span id="drawPro"></span>%</p>
     </main>
 
     <script src="js/bootstrap.bundle.min.js"></script>
