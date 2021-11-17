@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock paper scissor</title>
+    <title>Weather app</title>
+    <link rel="shortcut icon" href="https://icons-for-free.com/iconfiles/png/512/forecast+partly+cloudy+weather+icon-1320196484400215944.png" type="image/icon">
     <link rel="stylesheet" href="css/bootstrap-icons.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body{
+            background: #eeedec;
+            letter-spacing: 0.2em;
+            font-size: 0.8em;
+        }
+        .container{
+            max-width: 400px;
+        }
+        .icon{
+            position: relative;
+            top: -50px;
+            border-radius: 50%;
+            width: 100px;
+            margin-bottom: -50px;
+        }
+    </style>
 </head>
 <body>
     <!-- Jebzen Navbar -->
@@ -49,51 +67,40 @@
                 </a>
             </li>
 
+            <li class="t-navbar-item">
+                <a href="weather.html" class="t-navbar-link">
+                    <img src="https://icons-for-free.com/iconfiles/png/512/forecast+partly+cloudy+weather+icon-1320196484400215944.png" alt="" height="32" width="32">
+                    <span class="t-link-text">Weather app</span>
+                </a>
+            </li>
+            
         </ul>
     </nav>
 
-    <main class="container my-5">
-        <div class="d-flex justify-content-center">
-            <div class="btn-group">
-                <button class="btn btn-lg btn-warning" id="rockBtn">
-                    Rock
-                </button>
-                <button class="btn btn-lg btn-success" id="paperBtn">
-                    Paper
-                </button>
-                <button class="btn btn-lg btn-danger" id="scissorBtn">
-                    Scissors
-                </button>
+    <main class="ms-6 d-flex w-100">
+        <div class="container my-5 mx-auto">
+
+            <h1 class="text-muted text-center my-4">Weather Ninja</h1>
+        
+            <form class="change-location my-4 text-center text-muted">
+                <label for="city">Enter a location for weather information</label>
+                <input type="text" name="city" class="form-control p-4">
+            </form>
+            
+            <div class="card shadow-lg rounded d-none">
+                <img src="https://via.placeholder.com/400x300" class="time card-img-top">
+                <div class="icon bg-light mx-auto text-center">
+                    <img src="" alt="">
+                </div>
+                <div class="text-muted text-uppercase text-center details"></div>
             </div>
-        </div>
-
-        <br>
-    
-        <h3 class="text-center">COMPUTER</h3>
-        <h4 class="text-center" id="computer_choice" class="fs-4"></h4>
-        
-        <br>
-        
-        <h3 class="text-center">PLAYER</h3>
-        <h4 class="text-center" id="player_choice" class="fs-4"></h4>
-    
-        <br>
-    
-        <h3 class="text-center">RESULT</h3>
-        <h4 class="text-center" id="result" class="fs-4"></h4>
-
-        <br>
-
-        <h3 class="text-muted">Statiscs:</h3>
-        <p class="text-muted fst-italic">Player procent: <span id="playerPro"></span>%</p>
-        <p class="text-muted fst-italic">Computer procent: <span id="computerPro"></span>%</p>
-        <p class="text-muted fst-italic">Draw procent: <span id="drawPro"></span>%</p>
+            
+        </div> 
     </main>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <!--
-    <script src="js/rockpaper_modularized.js"></script>
-    -->
-    <script src="js/rockpaper_object_literal.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/forecast.js"></script>
 </body>
 </html>
