@@ -39,13 +39,23 @@ const updateCity = async (city) => {
 
 };
 
+if(localStorage && localStorage.getItem('Location')){
+  cityForm.city.value = localStorage.getItem('Location');
+
+  const city = cityForm.city.value.trim();
+  updateCity(city)
+    .then(data => updateUI(data))
+    .catch(err => console.log(err));
+}
+
 cityForm.addEventListener('submit', e => {
   // prevent default action
   e.preventDefault();
   
   // get city value
   const city = cityForm.city.value.trim();
-  cityForm.reset();
+  //cityForm.reset();
+  localStorage.setItem('Location', city);
 
   // update the ui with new city
   updateCity(city)
