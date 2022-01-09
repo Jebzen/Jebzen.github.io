@@ -1,10 +1,16 @@
 const config = {
-    apiKey: "AIzaSyA_GYjnLsDZvmgUDiGenC19u3ulir5lEj4",
-    authDomain: "fir-note-app-8b4a1.firebaseapp.com",
-    projectId: "fir-note-app-8b4a1",
-    storageBucket: "fir-note-app-8b4a1.appspot.com",
-    messagingSenderId: "3668182268",
-    appId: "1:3668182268:web:a3e6abf4dcb8df0d404379"
+    apiKey: "AIzaSyAlVhZipHF7aBQYaUv19MymDvElQKSxf0g",
+
+    authDomain: "fir-note-app-2.firebaseapp.com",
+
+    projectId: "fir-note-app-2",
+
+    storageBucket: "fir-note-app-2.appspot.com",
+
+    messagingSenderId: "1014210800869",
+
+    appId: "1:1014210800869:web:8e9d3544d637f9f16ef80c"
+
 };
 firebase.initializeApp(config);
 const db = firebase.firestore();
