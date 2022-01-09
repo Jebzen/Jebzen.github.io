@@ -1,0 +1,6 @@
+main{
+    display: flex;
+    margin-top: 3rem;
+    max-width: 500px;
+    flex-direction: column;
+}
