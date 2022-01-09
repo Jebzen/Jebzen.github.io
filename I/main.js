@@ -1,5 +1,10 @@
-let assignment = "Explain the difference between: var, const and let? Show some examples."
-console.warn(assignment); console.log();
+function assignment(str){
+    console.log();
+    console.warn(str);
+    console.log();
+}
+
+assignment("Explain the difference between: var, const and let? Show some examples.");
 
 
 console.log(I) //console.log(II) //console.log(III)
@@ -64,8 +69,7 @@ for(x = 0; x < 5; x++){  //index has a global scope
 console.log();
 
 
-assignment = "Explain what template literals/template strings are? Show some examples."
-console.warn(assignment); console.log();
+assignment("Explain what template literals/template strings are? Show some examples.");
 
 
 let str = `Hello`;
@@ -91,8 +95,7 @@ str = `Calculations:
 console.log(str); console.log();
 
 
-assignment = "Which are the datatypes of JavaScript?"
-console.warn(assignment); console.log();
+assignment("Which are the datatypes of JavaScript?");
 
 
 str = `Datatypes are:
@@ -119,8 +122,7 @@ var obj = {
 print_datatypes(str, number1, truth, obj, obj.unknown)
 
 
-assignment = "Explain how to use classes, constructors, properties and methods. Show relevant examples."
-console.warn(assignment); console.log();
+assignment("Explain how to use classes, constructors, properties and methods. Show relevant examples.");
 
 
 class person{
@@ -160,5 +162,4 @@ console.log(Jeppe.name)
 console.log()
 
 
-assignment = "What is Node.js, NPM, Babel, Webpack and the CLI?";
-console.warn(assignment); console.log();
+assignment("What is Node.js, NPM, Babel, Webpack and the CLI?");
