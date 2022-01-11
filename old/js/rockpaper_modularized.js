@@ -77,13 +77,3 @@ function display() {
             return "<b class='text-danger'>ERROR</b>";
     }
 }
-
-		/*
-
-		Stuff to handle ;-):
-		1. Depending on the button pushed the user choice needs to be registered
-		2. The computer should make a random choice - computerInput()
-		3. Choices need to be compared - compare()
-		4. Winner should be displayed - display()
-
-		*/

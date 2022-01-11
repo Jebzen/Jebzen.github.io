@@ -39,6 +39,7 @@ if(true){
     var I = "Var IV";
     let II = "Let IV";
     const III = "Const IV";
+    //print_console(I, II, III)
 }
 print_console(I, II, III)
 

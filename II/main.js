@@ -26,10 +26,10 @@ console.log();
 function plus_string(str){
     type = typeof str;
     str += " is a " + type;
-    return str;
+    console.log(str)
 }
 
-arr.forEach(element => console.log(plus_string(element)))
+arr.forEach(element => plus_string(element))
 console.log();
 
 class person{
@@ -124,7 +124,7 @@ assignment("Show examples of how to use Filter, Map and Sort methods and how to 
     console.log(premiumUsers);
 
 //Map
-    const prices = [20, 10, 30, 25, 15, 40, 80, 5];
+    //const prices = [20, 10, 30, 25, 15, 40, 80, 5];
 
     const products = [
         {name: 'gold star', price: 20},
@@ -144,42 +144,44 @@ assignment("Show examples of how to use Filter, Map and Sort methods and how to 
 
     console.log(products, saleProducts);
 
-//Reduce
-    let scores = [
-        {player: 'mario', score: 50},
-        {player: 'yoshi', score: 30},
-        {player: 'mario', score: 70},
-        {player: 'crystal', score: 60}
-    ];
-    
-    const marioTotal = scores.reduce((acc, curr) => {
-        if(curr.player === 'mario'){
-            acc += curr.score;
-        }
-        return acc;
-    }, 0);
-    
-    console.log(marioTotal);
+/*
+    //Reduce
+        let scores = [
+            {player: 'mario', score: 50},
+            {player: 'yoshi', score: 30},
+            {player: 'mario', score: 70},
+            {player: 'crystal', score: 60}
+        ];
+        
+        const marioTotal = scores.reduce((acc, curr) => {
+            if(curr.player === 'mario'){
+                acc += curr.score;
+            }
+            return acc;
+        }, 0);
+        
+        console.log(marioTotal);
 
-//Find
-    scores = [10, 5, 0, 40, 60, 10, 20, 70];
+    //Find
+        scores = [10, 5, 0, 40, 60, 10, 20, 70];
 
-    const firstHighScore = scores.find(score => score > 50);
-    console.log(firstHighScore);
+        const firstHighScore = scores.find(score => score > 50);
+        console.log(firstHighScore);
+*/
 
 //Sort
     // example 1 - sorting strings
     const names = ['mario', 'shaun', 'chun-li', 'yoshi', 'luigi'];
 
-    // names.sort();
-    names.reverse();
+    names.sort();
+    // names.reverse();
     console.log(names);
 
     // example 2 - sorting numbers
     scores = [10, 50, 20, 5, 35, 70, 45];
 
-    // scores.sort();
-    scores.reverse();
+    scores.sort();
+    //scores.reverse();
     console.log(scores);
 
     // example 3 - sorting objects
@@ -234,7 +236,7 @@ let colors = [
 ]
 
 const button = document.getElementById("submit_button");
-button.addEventListener('click', ()=>{
+button.addEventListener('mouseover', ()=>{
     while (button.classList.length > 0) {
         button.classList.remove(button.classList.item(0));
     }

@@ -1,6 +1,3 @@
-// a module defined using object literal notation
-// https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript
-
 var myGame = {
 	// In object literal notation, an object is described as a set of comma-separated name/value pairs enclosed in curly braces.
 	// Names inside the object may be either strings or identifiers that are followed by a colon.

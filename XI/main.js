@@ -23,7 +23,7 @@ function multiply(multiplier, ...theArgs) {
 }
   
 let arr = multiply(2, 15, 25, 42)
-console.log(arr)  // [30, 50, 84]
+console.log(arr)
 
 //Normal function
 function sum(x, y, z) {
@@ -92,8 +92,8 @@ function Person(first, last, age, eyecolor) {
     this.age = age;
     this.eyeColor = eyecolor;
 }
+console.log(Person.prototype)
 Person.prototype.nationality = "English";
-
 
 Person.prototype.name = function() {
     return this.firstName + " " + this.lastName;

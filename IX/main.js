@@ -46,6 +46,11 @@ console.log()
 
 assignment("What is the difference between a function and a method?");
 
+/*
+Function	                    Method
+A function lives on its own.	A method is a function associated with an object property.
+*/
+
 
 function greet(){
     console.log("Hello")
@@ -56,7 +61,7 @@ console.log(person.text())
 
 assignment("What is an HTML-Collection?");
 
-
+console.log(document)
 console.log(document.forms[0])
 console.log(document.forms.form_2)
 

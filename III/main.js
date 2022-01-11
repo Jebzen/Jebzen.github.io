@@ -26,7 +26,7 @@ let math = {
     'factit': function factorial(n) {
         console.log(n)
         if (n <= 1) {
-        return 1;
+            return 1;
         }
         return n * factorial(n - 1);
     }
@@ -61,15 +61,18 @@ assignment("What are arrow functions and when would you use them?");
     // Arrow Function Break Down
 
     // 1. Remove the word "function" and place arrow between the argument and opening body bracket
-    (a) => {
+    var AA = (a) => {
         return a + 100;
     }
+    console.log(AA(50))
     
     // 2. Remove the body braces and word "return" -- the return is implied.
-    (a) => a + 100;
+    AA = (a) => a + 100;
+    console.log(AA(50))    
     
     // 3. Remove the argument parentheses
-    a => a + 100;
+    AA = a => a + 100;
+    console.log(AA(50))    
 
 
 assignment("What are callback functions? Show an example.");

@@ -20,7 +20,13 @@ console.log(element1, element2, element3, element4, element5, element6)
 assignment("How would you select multiple elements in the DOM? Show practical examples.");
 
 
-const paragraphs = document.querySelectorAll("p")
+var paragraphs_single = document.querySelector("p")
+console.log(paragraphs_single);
+
+var paragraphs = document.querySelectorAll("p")
+console.log(paragraphs);
+
+paragraphs = document.querySelector("form").querySelectorAll("input")
 console.log(paragraphs);
 
 
@@ -45,7 +51,7 @@ var text = `hgrkojy3 qi5b ryk 53n90jy
     SG SGF SG 
     5435y36357yis u345G FGA 7 53y7 35y7b3y v
     yh53sG S WRQ AJIK
-    lrlhg SG 
+    lrlhg SG Duck
     3lyg  SF F
     elg vpkes4tlLA DLKPKJ`;
 
@@ -53,14 +59,14 @@ var Case = text.match(/Duck/i);
 var Global = text.match(/is/g);
 var multiline = text.match(/^is/m);
 
-var bracket = text.match(/[h]/g);
+var bracket = text.match(/[b]/g);
 var digits = text.match(/[1-4]/g);
-var alternatives = text.match(/(red|green)/g);
+var alternatives = text.match(/(SG|SF)/g);
 
 var digit = text.match(/\d/g);
 var whitespace = text.match(/\s/g);
-var beginning1 = text.search(/\bLO/);
-var beginning2 = text.search(/LO\b/);
+var beginning1 = text.search(/\bhg/);
+var beginning2 = text.search(/5G\b/);
 var unicode = text.match(/\u0057/g);
 
 var leastone = text.match(/o+/g);

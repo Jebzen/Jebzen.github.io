@@ -86,7 +86,7 @@ data_input.addEventListener('change', ()=>{
     input = data_input.value;
     if(isNaN(input)){
         console.log(input + " is a string")
-        console.log(input)
+        //console.log(input)
     } else{
         if(parseFloat(input) === parseInt(input)){
             console.log(input + " is a integer")
