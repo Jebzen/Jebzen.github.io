@@ -83,6 +83,7 @@ for (const entry of myIterator) {
 }
 console.log(text)
 
+
 assignment("In JS - What are Prototypes?");
 
 
@@ -104,7 +105,6 @@ const myMother = new Person("Sally", "Rally", 48, "green");
 console.log(myFather, myMother)
 console.log(myFather.nationality)
 console.log(myFather.name())
-
 
 
 assignment("How are objects in JavaScript stored in memory?");

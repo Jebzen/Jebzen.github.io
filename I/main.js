@@ -7,7 +7,9 @@ function assignment(str){
 assignment("Explain the difference between: var, const and let? Show some examples.");
 
 
-console.log(I) //console.log(II) //console.log(III)
+console.log(I) 
+//console.log(II) 
+//console.log(III)
 console.log()
 
 function print_console(){
@@ -92,7 +94,7 @@ str = `Calculations:
 console.log(str); console.log();
 
 str = `Calculations:
-        ${(number1 * number1) + number2}`
+        ${(number1 * number1) + number2}`;
 console.log(str); console.log();
 
 
@@ -104,7 +106,8 @@ str = `Datatypes are:
     numbers
     booleans
     undefined
-    null`
+    null
+    object`
 
 console.log(str); console.log();
 

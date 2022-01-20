@@ -90,41 +90,41 @@ const addNote = (note, id) => {
 
 //Update Note
 const updateNote = (data, id) => {
-  let note = document.getElementById(id);
-  note.childNodes[1].childNodes[1].childNodes[1].innerText = data.title;
-  note.childNodes[1].childNodes[3].childNodes[1].innerText = data.body;
-  //note.childNodes[1].childNodes[1].childNodes[2].checked = data.important;
+    let note = document.getElementById(id);
+    note.childNodes[1].childNodes[1].childNodes[1].innerText = data.title;
+    note.childNodes[1].childNodes[3].childNodes[1].innerText = data.body;
+    //note.childNodes[1].childNodes[1].childNodes[2].checked = data.important;
 
-  //let timestamp = note.date.toDate();
-  //let date = new Date(timestamp);
-  //let time = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-  //note.childNodes[1].childNodes[5].childNodes[1].innerText = time;
-  if(data.important == true){
-    note.classList.add("order-first")
-  } else{
-    note.classList.remove("order-first")
-  }
+    //let timestamp = note.date.toDate();
+    //let date = new Date(timestamp);
+    //let time = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    //note.childNodes[1].childNodes[5].childNodes[1].innerText = time;
+    if(data.important == true){
+        note.classList.add("order-first")
+    } else{
+        note.classList.remove("order-first")
+    }
 }
 
 // real-time listener
 const unsub = db.collection('notes').onSnapshot(snapshot => {
-  snapshot.docChanges().forEach(change => {
-    const doc = change.doc;
-    //console.log(change.type);
-    if(change.type === 'added')
-    {
-      addNote(doc.data(), doc.id)
-    } 
-    else if (change.type === 'removed')
-    {
-      deleteNote(doc.id);
-    } 
-    else if(change.type == "modified")
-    {
-      //console.log(doc.data(), doc.id)
-      updateNote(doc.data(), doc.id);
-    }
-  });
+    snapshot.docChanges().forEach(change => {
+        const doc = change.doc;
+        //console.log(change.type);
+        if(change.type === 'added')
+        {
+            addNote(doc.data(), doc.id)
+        } 
+        else if (change.type === 'removed')
+        {
+            deleteNote(doc.id);
+        } 
+        else if(change.type == "modified")
+        {
+            //console.log(doc.data(), doc.id)
+            updateNote(doc.data(), doc.id);
+        }
+    });
 });
 
 // save documents
