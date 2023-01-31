@@ -1,9 +1,10 @@
+import React from "react";
 import { Route, Routes } from "react-router";
 import Layout from "./components/Layout";
 import About from "./pages/About";
 import Home from "./pages/Home";
 
-function App() {
+export default function App() {
 	return (
 		<Layout>
 			<Routes>
@@ -14,5 +15,3 @@ function App() {
 		</Layout>
 	);
 }
-
-export default App;
