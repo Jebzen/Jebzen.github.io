@@ -1,0 +1,34 @@
+Full Stack
+  To Do App
+  Calculator
+  Weather App
+  Quiz App
+  Interactive Resume
+  To Do list with auth
+  Music Streaming App
+  Social media App
+  Job Board
+  Real time game App
+  Workout tracker App
+  Video Calling App
+  Image sharing App
+  Collaborative editing app
+
+Back end | https://blog.hubspot.com/website/backend-projects
+  A User Authentication System
+  Build a Landing Page
+  Build Your Own Web Server
+  Build a Finance Application
+  Create a Text Analyzer
+  Build a To-Do App
+  Build a CLI App
+  Build an API
+  Build a Proxy Server
+  Create a Library Book Collection Application Project
+  Build a Web Crawler
+  Build an E-commerce Application
+  Create a Restaurant App
+  Deploy an Image Management Application
+  Build a Search Engine for StackOverflow
+
+Front End 
