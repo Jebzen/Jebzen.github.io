@@ -32,3 +32,20 @@ Back end | https://blog.hubspot.com/website/backend-projects
   Build a Search Engine for StackOverflow
 
 Front End 
+  Portfolio Website
+  To-Do App
+  Virtual Keyboard
+  Meme Generator
+  Spotify Clone
+  Chat App
+  E-Commerce Website
+  Content Management System
+  Develop a search engine
+  Create a social media platform
+  Build a website for a small business
+  Redesign an existing website
+  Create an interactive game or quiz
+  Build a tool or calculator
+  Create a data visualization
+  Create a landing page for a new (or imaginary) product
+  Create a custom application or plugin
