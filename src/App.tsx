@@ -9,7 +9,7 @@ export default function App() {
 	return (
 		<Layout>
 			<Routes>
-				<Route path="/" element={<Home />} />;
+				<Route path="/" element={<Home />} />
 				<Route path="/about" element={<About />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
