@@ -3,16 +3,61 @@
 //@tailwind utilities;
 
 @import "bootstrap";
-@import "./phone";
 
 html,
 body {
 	@extend .bg-dark, .text-light;
 }
 
+.profession {
+	overflow: hidden;
+	height: 1.1em;
+	span {
+		display: block;
+		animation: spin_words 10s infinite;
+	}
+}
+
+@keyframes spin_words {
+	10% {
+		transform: translateY(-112%);
+	}
+	25% {
+		transform: translateY(-100%);
+	}
+	35% {
+		transform: translateY(-212%);
+	}
+	50% {
+		transform: translateY(-200%);
+	}
+	60% {
+		transform: translateY(-312%);
+	}
+	75% {
+		transform: translateY(-300%);
+	}
+	85% {
+		transform: translateY(-412%);
+	}
+	100% {
+		transform: translateY(-400%);
+	}
+}
+
+//Phone
+.hero {
+	@extend .text-center, .d-flex, .flex-column, .justify-content-center;
+	height: 50vh;
+	h1 {
+		font-size: calc(2rem + 1.5vw);
+		font-weight: 700;
+	}
+}
+
+//Wider than phone
 @media (min-width: 577px) {
 	.hero {
-		color: var(--bs-primary) !important;
 		text-align: start !important;
 	}
 }
