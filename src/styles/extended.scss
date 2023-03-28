@@ -49,6 +49,11 @@ body {
 		font-size: calc(2rem + 1.5vw);
 		font-weight: 700;
 	}
+	@media (max-width: 576px) {
+		.btn-lg {
+			--bs-btn-font-size: 1rem;
+		}
+	}
 }
 
 //Wider than phone

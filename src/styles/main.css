@@ -2,10 +2,13 @@
 	overflow: hidden;
 	height: 1.1em;
 }
-
 .profession span {
 	display: block;
 	animation: spin_words 10s infinite;
+}
+.profession span a {
+	text-decoration: none;
+	color: white;
 }
 
 .bg-image {
@@ -20,6 +23,10 @@
 	opacity: 50%;
 	position: relative;
 	align-self: center;
+}
+
+article {
+	margin: 2em 0em;
 }
 
 @media only screen and (min-width: 767px) {
