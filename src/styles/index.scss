@@ -7,6 +7,7 @@
 html,
 body {
 	@extend .bg-dark, .text-light;
+	font-family: "Poppins", sans-serif;
 }
 
 .profession {
@@ -19,26 +20,29 @@ body {
 }
 
 @keyframes spin_words {
-	10% {
-		transform: translateY(-112%);
+	0% {
+		transform: translateY(0%);
+	}
+	20% {
+		transform: translateY(0%);
 	}
 	25% {
 		transform: translateY(-100%);
 	}
-	35% {
-		transform: translateY(-212%);
+	45% {
+		transform: translateY(-100%);
 	}
 	50% {
 		transform: translateY(-200%);
 	}
-	60% {
-		transform: translateY(-312%);
+	70% {
+		transform: translateY(-200%);
 	}
 	75% {
 		transform: translateY(-300%);
 	}
-	85% {
-		transform: translateY(-412%);
+	95% {
+		transform: translateY(-300%);
 	}
 	100% {
 		transform: translateY(-400%);

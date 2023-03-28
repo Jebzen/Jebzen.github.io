@@ -20,7 +20,7 @@ export default function Home() {
 						<span>Front-end Developer</span>
 						<span>Full-stack Developer</span>
 						<span>Back-end Developer</span>
-						<span>UX Designer</span>
+						<span>Web Developer</span>
 					</h1>
 				</div>
 			</main>
