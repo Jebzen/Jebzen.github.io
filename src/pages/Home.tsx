@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router";
+//import CV from "../assets/CV.png";
 
 export default function Home() {
 	/*
@@ -13,6 +14,7 @@ export default function Home() {
 			<main className="container">
 				<div className="top-bar"></div>
 				<div className="hero">
+					<div className="bg-image"></div>
 					<h1>Hello</h1>
 					<h1>I'm Jeppe E. Bentzen</h1>
 					<h1 className="profession">

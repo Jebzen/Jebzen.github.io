@@ -1,0 +1,35 @@
+.profession {
+	overflow: hidden;
+	height: 1.1em;
+}
+
+.profession span {
+	display: block;
+	animation: spin_words 10s infinite;
+}
+
+.bg-image {
+	display: flex;
+	background-image: url("/src/assets/CV.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 10em;
+	border-radius: 100%;
+	aspect-ratio: 1/1;
+	opacity: 50%;
+	position: relative;
+	align-self: center;
+}
+
+@media only screen and (min-width: 767px) {
+	.bg-image {
+		position: absolute;
+		align-self: end;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.bg-image {
+		margin-right: 10em;
+	}
+}
