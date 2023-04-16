@@ -26,8 +26,52 @@
 }
 
 .list-section article {
-	border-top: 1px solid rgba(255, 255, 255, 0.5);
+	border-top: 1px solid rgba(70, 70, 70, 0.5);
 	padding-top: 1rem;
+}
+
+.hideable {
+	max-height: 0px;
+	overflow: hidden;
+	transition: 0.15s ease-out;
+	position: relative;
+	left: -5px;
+}
+.hideable-open {
+	max-height: 1000px;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+.bi.bi-caret-right::before {
+	transition: transform 0.15s ease-out;
+}
+
+.bi.bi-caret-right.ninetydeg::before {
+	transform: rotate(90deg);
+}
+
+.clicker {
+	cursor: pointer;
+	border-radius: 0.25rem;
+	padding: 5px;
+	position: relative;
+	left: -5px;
+	margin-bottom: 0.25rem;
+}
+.clicker h3 {
+	margin-bottom: 0;
+}
+.clicker:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+.clicker:focus-within {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+#contact article {
+	border-radius: 0.25rem;
 }
 
 @media only screen and (min-width: 767px) {
