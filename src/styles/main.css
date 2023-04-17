@@ -36,6 +36,7 @@
 	transition: 0.15s ease-out;
 	position: relative;
 	left: -5px;
+	padding-left: 0.5rem;
 }
 .hideable-open {
 	max-height: 1000px;

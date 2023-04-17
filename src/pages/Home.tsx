@@ -71,10 +71,13 @@ export default function Home() {
 						</header>
 						<article>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Incidunt sunt aliquam amet consequuntur officiis odio saepe
-								obcaecati ipsam vitae, possimus architecto cupiditate sint
-								recusandae expedita earum autem eum excepturi laborum.
+								I am a young 23 year old Web Developer with a bachelor in web
+								development, and I have a special interest in quality assurance
+								and quality assessment. I have been a tutor during my time as a
+								web developer, and I have an interest in new and modern web
+								technologies in terms of what works best for me and my projects.
+								I still follow the news about web development, and I always try
+								to have a little knowledge of most web technologies.
 							</p>
 						</article>
 					</section>
@@ -290,7 +293,7 @@ export default function Home() {
 								onKeyDown={showEvent}
 							>
 								<h3>
-									Rich Media Specialist
+									SOHOS ApS
 									<i
 										className="ps-1 bi bi-caret-right"
 										id="high-school-arrow"
@@ -299,6 +302,7 @@ export default function Home() {
 							</header>
 
 							<section className="hideable" id="exp-multi">
+								<h4>Rich Media Specialist</h4>
 								<ul>
 									<li>Maintenance and development for 3 websites</li>
 									<li>WordPress development with Elementor</li>
