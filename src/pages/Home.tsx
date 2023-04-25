@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router";
 import CodeTag from "../components/CodeTag";
+import DropDownSection from "../components/DropDownSection";
 //import CV from "../assets/CV.png";
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
 	return (
 		<>
 			<main className="container">
+				{/* HERO START */}
 				<section className="hero mt-5">
 					<div className="bg-image mb-5 mb-md-0"></div>
 					<h1>Hello!</h1>
@@ -64,7 +66,9 @@ export default function Home() {
 						</a>
 					</div>
 				</section>
+				{/* HERO START END */}
 
+				{/* CONTENT START */}
 				<section className="row flex-wrap" id="content">
 					<section className="mb-5 d-flex d-lg-none" id="contact-phone">
 						<article className="bg-primary p-3">
@@ -120,140 +124,95 @@ export default function Home() {
 							<h2 className="fw-bold text-uppercase">Education</h2>
 						</header>
 
-						<article id="bachelor" className="mb-4">
-							<header
-								className="clicker"
-								onClick={showEvent}
-								tabIndex={0}
-								onKeyDown={showEvent}
-							>
-								<h3>
-									Web Developer
-									<i
-										className="ps-1 bi bi-caret-right ninetydeg"
-										id="eduweb-arrow"
-									></i>
-								</h3>
-							</header>
+						<DropDownSection
+							title={"Web Developer"}
+							id={"bachelor"}
+							level={"Bachelor"}
+							place={"CPHBusiness Lyngby"}
+							year={"2021 - 2023"}
+							startShown={true}
+						>
+							<ul>
+								<li className="mb-3">
+									Front End Development <br />
+									<CodeTag tag="Typescript" />
+									<CodeTag tag="React" />
+									<CodeTag tag="Webpack" />
+									<CodeTag tag="Firebase" />
+									<CodeTag tag="Javascript" />
+								</li>
 
-							<section className="hideable hideable-open" id="eduweb">
-								<header className="mb-4">
-									<h4>Bachelor</h4>
-									<h5>
-										CPHBusiness Lyngby <span>2021 - 2023</span>
-									</h5>
-								</header>
+								<li className="mb-3">
+									Back End Development <br />
+									<CodeTag tag="C#" />
+									<CodeTag tag="ASP.NET" />
+									<CodeTag tag="Python" />
+									<CodeTag tag="Testing" />
+									<CodeTag tag="MSSQL" />
+								</li>
 
-								<ul>
-									<li className="mb-3">
-										Front End Development <br />
-										<CodeTag tag="Typescript" />
-										<CodeTag tag="React" />
-										<CodeTag tag="Webpack" />
-										<CodeTag tag="Firebase" />
-										<CodeTag tag="Javascript" />
-									</li>
+								<li className="mb-3">
+									User Experience & Design <br />
+									<CodeTag tag="Design conventions" />
+									<CodeTag tag="User testing" />
+									<CodeTag tag="User flow" />
+									<CodeTag tag="User recognition" />
+									<CodeTag tag="Atomic design" />
+								</li>
+							</ul>
+						</DropDownSection>
 
-									<li className="mb-3">
-										Back End Development <br />
-										<CodeTag tag="C#" />
-										<CodeTag tag="ASP.NET" />
-										<CodeTag tag="Python" />
-										<CodeTag tag="Testing" />
-										<CodeTag tag="MSSQL" />
-									</li>
+						<DropDownSection
+							title={"Multimedia Designer"}
+							id={"academic"}
+							level={"Academic Graduation"}
+							place={"CPHBusiness Lyngby"}
+							year={"2019 - 2021"}
+							startShown={false}
+						>
+							<ul>
+								<li className="mb-3">
+									Front End Development <br />
+									<CodeTag tag="Javascript" />
+									<CodeTag tag="HTML" />
+									<CodeTag tag="CSS" />
+									<CodeTag tag="SCSS" />
+								</li>
 
-									<li className="mb-3">
-										User Experience & Design <br />
-										<CodeTag tag="Design conventions" />
-										<CodeTag tag="User testing" />
-										<CodeTag tag="User flow" />
-										<CodeTag tag="User recognition" />
-										<CodeTag tag="Atomic design" />
-									</li>
-								</ul>
-							</section>
-						</article>
+								<li className="mb-3">
+									Back End Development <br />
+									<CodeTag tag="PHP" />
+									<CodeTag tag="MYSQL" />
+									<CodeTag tag="Server-Side Validation" />
+									<CodeTag tag="API" />
+								</li>
 
-						<article id="academic" className="mb-4">
-							<header
-								className="clicker"
-								onClick={showEvent}
-								tabIndex={0}
-								onKeyDown={showEvent}
-							>
-								<h3>
-									Multimedia Designer
-									<i className="ps-1 bi bi-caret-right" id="edumul-arrow"></i>
-								</h3>
-							</header>
+								<li className="mb-3">
+									User Experience & Design <br />
+									<CodeTag tag="Illustrator" />
+									<CodeTag tag="Photoshop" />
+									<CodeTag tag="Premire Pro" />
+									<CodeTag tag="Design concepts" />
+								</li>
+							</ul>
+						</DropDownSection>
 
-							<section className="hideable" id="edumul">
-								<header className="mb-4">
-									<h4>Academic Graduation</h4>
-									<h5>
-										CPHBusiness Lyngby <span>2019 - 2021</span>
-									</h5>
-								</header>
-
-								<ul>
-									<li className="mb-3">
-										Front End Development <br />
-										<CodeTag tag="Javascript" />
-										<CodeTag tag="HTML" />
-										<CodeTag tag="CSS" />
-										<CodeTag tag="SCSS" />
-									</li>
-
-									<li className="mb-3">
-										Visual identity and Graphic Design <br />
-										<CodeTag tag="Illustrator" />
-										<CodeTag tag="Photoshop" />
-										<CodeTag tag="Premire Pro" />
-										<CodeTag tag="Design concepts" />
-									</li>
-
-									<li className="mb-3">
-										Back End Development <br />
-										<CodeTag tag="PHP" />
-										<CodeTag tag="MYSQL" />
-										<CodeTag tag="Server-Side Validation" />
-										<CodeTag tag="API" />
-									</li>
-								</ul>
-							</section>
-						</article>
-
-						<article id="htx" className="mb-4">
-							<header
-								className="clicker"
-								onClick={showEvent}
-								tabIndex={0}
-								onKeyDown={showEvent}
-							>
-								<h3>
-									High School
-									<i
-										className="ps-1 bi bi-caret-right"
-										id="high-school-arrow"
-									></i>
-								</h3>
-							</header>
-
-							<section className="hideable" id="high-school">
-								<header>
-									<h4>HTX</h4>
-									<h5>Sukkertoppen HTX 2017 - 2019</h5>
-									<ul>
-										<li className="mb-2">Communication & IT A</li>
-										<li className="mb-2">English A</li>
-										<li className="mb-2">SRP</li>
-										<li className="mb-2">Danish A</li>
-										<li className="mb-2">Math B</li>
-									</ul>
-								</header>
-							</section>
-						</article>
+						<DropDownSection
+							title={"High School"}
+							id={"htx"}
+							level={"HTX"}
+							place={"Sukkertoppen HTX"}
+							year={"2017 - 2019"}
+							startShown={false}
+						>
+							<ul>
+								<li className="mb-2">Communication & IT A</li>
+								<li className="mb-2">English A</li>
+								<li className="mb-2">SRP</li>
+								<li className="mb-2">Danish A</li>
+								<li className="mb-2">Math B</li>
+							</ul>
+						</DropDownSection>
 					</section>
 
 					<section id="experience" className="col-lg-8 mb-5 list-section">
@@ -261,72 +220,87 @@ export default function Home() {
 							<h2 className="fw-bold text-uppercase">Experience</h2>
 						</header>
 
-						<article id="alphasol" className="mb-4">
-							<header
-								className="clicker"
-								onClick={showEvent}
-								tabIndex={0}
-								onKeyDown={showEvent}
-							>
-								<h3>
-									Alpha Solutions
-									<i
-										className="ps-1 bi bi-caret-right"
-										id="high-school-arrow"
-									></i>
-								</h3>
-							</header>
+						<DropDownSection
+							title={"Alpha Solutions"}
+							id={"alphasol"}
+							level={"Internship"}
+							place={"Alpha Solutions Denmark"}
+							year={"Aug 22 - Okt 22"}
+							startShown={false}
+						>
+							<ul>
+								<li className="mb-3">
+									E-commerce webshop with a Headless CMS <br />
+									<CodeTag tag="Vendure" />
+									<CodeTag tag="Umbraco Heartcore" />
+								</li>
+								<li className="mb-3">
+									Integration with the search engine Solr <br />
+									<CodeTag tag="Java" />
+									<CodeTag tag="Server" />
+								</li>
+								<li className="mb-3">
+									CI/CD & system testing <br />
+									<CodeTag tag="Github actions" />
+									<CodeTag tag="Jest" />
+								</li>
+								<li className="mb-3">
+									Background task manager with Hangfire <br />
+									<CodeTag tag="ASP.NET" />
+									<CodeTag tag="Asynchronous actions" />
+								</li>
+								<li className="mb-1">Rendered Client sided</li>
+								<li className="mb-1">Login with Google Authentication</li>
+							</ul>
+						</DropDownSection>
 
-							<section className="hideable" id="exp-alhpa">
-								<h4>Internship</h4>
-								<ul>
-									<li>E-commerce webshop with a Headless CMS</li>
-									<li>Rendered Client sided</li>
-									<li>Integration with the search engine Solr.</li>
-									<li>Login with Google Authentication</li>
-									<li>CI/CD & system testing</li>
-									<li>Background task manager with Hangfire</li>
-								</ul>
-							</section>
-						</article>
-
-						<article id="multimediaintern" className="mb-4">
-							<header
-								className="clicker"
-								onClick={showEvent}
-								tabIndex={0}
-								onKeyDown={showEvent}
-							>
-								<h3>
-									SOHOS ApS
-									<i
-										className="ps-1 bi bi-caret-right"
-										id="high-school-arrow"
-									></i>
-								</h3>
-							</header>
-
-							<section className="hideable" id="exp-multi">
-								<h4>Rich Media Specialist</h4>
-								<ul>
-									<li>Maintenance and development for 3 websites</li>
-									<li>WordPress development with Elementor</li>
-									<li>
-										Third party intergration with Google Analytics, WPbackup,
-										etc.
-									</li>
-									<li>
-										Custom made Webshop form with Javascript, PHP and MYSQL
-									</li>
-									<li>
-										Custom WordPress intergration, development and styling
-									</li>
-								</ul>
-							</section>
-						</article>
+						<DropDownSection
+							title={"SOHOS ApS"}
+							id={"multimediaintern"}
+							level={"Rich Media Specialist"}
+							year={"Sep 21 - Jun 22"}
+							startShown={false}
+						>
+							<ul>
+								<li className="mb-3">
+									Maintenance and development for 3 websites <br />
+									<CodeTag tag="WordPress" />
+									<CodeTag tag="Elementor" />
+									<CodeTag tag="PHP" />
+									<CodeTag tag="SEO" />
+									<CodeTag tag="Site Security & Backup" />
+									<CodeTag tag="Migration" />
+								</li>
+								<li className="mb-3">
+									WordPress development with Elementor <br />
+									<CodeTag tag="Responsive Design" />
+									<CodeTag tag="Design systems" />
+								</li>
+								<li className="mb-3">
+									Third party intergration with Google Analytics, WPbackup, etc
+									<br />
+									<CodeTag tag="WPmail" />
+									<CodeTag tag="Facebook Messenger" />
+									<CodeTag tag="Calendly" />
+									<CodeTag tag="Facebook Pixel" />
+								</li>
+								<li className="mb-3">
+									Custom made payment form with Javascript, PHP and MYSQL <br />
+									<CodeTag tag="Stripe" />
+									<CodeTag tag="ESM6" />
+									<CodeTag tag="Webpack" />
+									<CodeTag tag="Babel" />
+								</li>
+								<li className="mb-1">
+									Custom WordPress intergration, development and styling
+								</li>
+							</ul>
+						</DropDownSection>
 					</section>
 				</section>
+				{/* CONTENT END */}
 
+				{/* PROJECTS START */}
 				<section id="projects" className="mb-5">
 					<header className="mb-4 fw-bold text-uppercase">
 						<h2 className="fw-bold text-uppercase">Projects</h2>
@@ -337,6 +311,7 @@ export default function Home() {
 						</center>
 					</article>
 				</section>
+				{/* PROJECTS EMD */}
 			</main>
 		</>
 	);
