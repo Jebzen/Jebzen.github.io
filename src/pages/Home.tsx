@@ -86,12 +86,15 @@ export default function Home() {
 						<section className="position-absolute mt-5" id="contact">
 							<article className="bg-primary p-3">
 								<h3 className="mb-3">Want to contact me?</h3>
-								<a
-									href="mailto:jeb.bentzen.work@gmail.com"
-									className="text-white"
-								>
-									jeb.bentzen.work@gmail.com
-								</a>
+								<p>
+									Write to my personal email adress at any time;{" "}
+									<a
+										href="mailto:jeb.bentzen.work@gmail.com"
+										className="text-white"
+									>
+										jeb.bentzen.work@gmail.com
+									</a>
+								</p>
 							</article>
 						</section>
 					</aside>
@@ -129,12 +132,14 @@ export default function Home() {
 									<li className="mb-3">
 										Front End Development <br />
 										<span className="badge text-bg-primary me-2">
-											Javascript
-										</span>
-										<span className="badge text-bg-primary me-2">
 											Typescript
 										</span>
 										<span className="badge text-bg-primary me-2">React</span>
+										<span className="badge text-bg-primary me-2">Webpack</span>
+										<span className="badge text-bg-primary me-2">Firebase</span>
+										<span className="badge text-bg-primary me-2">
+											Javascript
+										</span>
 									</li>
 
 									<li className="mb-3">
@@ -149,7 +154,7 @@ export default function Home() {
 									<li className="mb-3">
 										User Experience & Design <br />
 										<span className="badge text-bg-primary me-2">
-											Desgon conventions
+											Design conventions
 										</span>
 										<span className="badge text-bg-primary me-2">
 											User testing
@@ -246,6 +251,13 @@ export default function Home() {
 								<header>
 									<h4>HTX</h4>
 									<h5>Sukkertoppen HTX 2017 - 2019</h5>
+									<ul>
+										<li className="mb-3">Communication & IT A</li>
+										<li className="mb-3">English A</li>
+										<li className="mb-3">SRP</li>
+										<li className="mb-3">Danish A</li>
+										<li className="mb-3">Math B</li>
+									</ul>
 								</header>
 							</section>
 						</article>
@@ -327,12 +339,7 @@ export default function Home() {
 						<h2>Projects</h2>
 					</header>
 					<article>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-							sunt aliquam amet consequuntur officiis odio saepe obcaecati ipsam
-							vitae, possimus architecto cupiditate sint recusandae expedita
-							earum autem eum excepturi laborum.
-						</p>
+						<h3>TBA</h3>
 					</article>
 				</section>
 			</main>
