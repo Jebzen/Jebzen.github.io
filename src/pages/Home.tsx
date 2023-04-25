@@ -1,6 +1,8 @@
 import React from "react";
 import CodeTag from "../components/CodeTag";
 import DropDownSection from "../components/DropDownSection";
+import ContactSectionPhone from "../components/ContactSectionPhone";
+import ContactSectionAside from "../components/ContactSectionAside";
 //import CV from "../assets/CV.png";
 
 export default function Home() {
@@ -43,20 +45,7 @@ export default function Home() {
 
 				{/* CONTENT START */}
 				<section className="row flex-wrap" id="content">
-					<section className="mb-5 d-flex d-lg-none" id="contact-phone">
-						<article className="bg-primary p-3">
-							<h3 className="mb-3 fw-bold">Want to contact me?</h3>
-							<p>
-								Write to my personal email adress at any time:{" "}
-								<a
-									href="mailto:jeb.bentzen.work@gmail.com"
-									className="text-white"
-								>
-									jeb.bentzen.work@gmail.com
-								</a>
-							</p>
-						</article>
-					</section>
+					<ContactSectionPhone />
 
 					<section id="about" className="col-lg-8 mb-5">
 						<header className="mb-4">
@@ -75,22 +64,7 @@ export default function Home() {
 						</article>
 					</section>
 
-					<aside className="col-lg-4 d-none d-lg-flex sticky-top">
-						<section className="position-absolute mt-5" id="contact">
-							<article className="bg-primary p-3">
-								<h3 className="mb-3 fw-bold">Want to contact me?</h3>
-								<p>
-									Write to my personal email adress at any time:{" "}
-									<a
-										href="mailto:jeb.bentzen.work@gmail.com"
-										className="text-white"
-									>
-										jeb.bentzen.work@gmail.com
-									</a>
-								</p>
-							</article>
-						</section>
-					</aside>
+					<ContactSectionAside />
 
 					<section id="education" className="col-lg-8 mb-5 list-section">
 						<header className="mb-4">
