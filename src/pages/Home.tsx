@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router";
+import CodeTag from "../components/CodeTag";
 //import CV from "../assets/CV.png";
 
 export default function Home() {
@@ -65,9 +66,24 @@ export default function Home() {
 				</section>
 
 				<section className="row flex-wrap" id="content">
+					<section className="mb-5 d-flex d-lg-none" id="contact-phone">
+						<article className="bg-primary p-3">
+							<h3 className="mb-3 fw-bold">Want to contact me?</h3>
+							<p>
+								Write to my personal email adress at any time:{" "}
+								<a
+									href="mailto:jeb.bentzen.work@gmail.com"
+									className="text-white"
+								>
+									jeb.bentzen.work@gmail.com
+								</a>
+							</p>
+						</article>
+					</section>
+
 					<section id="about" className="col-lg-8 mb-5">
-						<header className="mb-4 fw-bold text-uppercase">
-							<h2>About Me</h2>
+						<header className="mb-4">
+							<h2 className="fw-bold text-uppercase">About Me</h2>
 						</header>
 						<article>
 							<p>
@@ -85,9 +101,9 @@ export default function Home() {
 					<aside className="col-lg-4 d-none d-lg-flex sticky-top">
 						<section className="position-absolute mt-5" id="contact">
 							<article className="bg-primary p-3">
-								<h3 className="mb-3">Want to contact me?</h3>
+								<h3 className="mb-3 fw-bold">Want to contact me?</h3>
 								<p>
-									Write to my personal email adress at any time;{" "}
+									Write to my personal email adress at any time:{" "}
 									<a
 										href="mailto:jeb.bentzen.work@gmail.com"
 										className="text-white"
@@ -100,8 +116,8 @@ export default function Home() {
 					</aside>
 
 					<section id="education" className="col-lg-8 mb-5 list-section">
-						<header className="mb-4 fw-bold text-uppercase">
-							<h2>Education</h2>
+						<header className="mb-4">
+							<h2 className="fw-bold text-uppercase">Education</h2>
 						</header>
 
 						<article id="bachelor" className="mb-4">
@@ -131,43 +147,29 @@ export default function Home() {
 								<ul>
 									<li className="mb-3">
 										Front End Development <br />
-										<span className="badge text-bg-primary me-2">
-											Typescript
-										</span>
-										<span className="badge text-bg-primary me-2">React</span>
-										<span className="badge text-bg-primary me-2">Webpack</span>
-										<span className="badge text-bg-primary me-2">Firebase</span>
-										<span className="badge text-bg-primary me-2">
-											Javascript
-										</span>
+										<CodeTag tag="Typescript" />
+										<CodeTag tag="React" />
+										<CodeTag tag="Webpack" />
+										<CodeTag tag="Firebase" />
+										<CodeTag tag="Javascript" />
 									</li>
 
 									<li className="mb-3">
 										Back End Development <br />
-										<span className="badge text-bg-primary me-2">C#</span>
-										<span className="badge text-bg-primary me-2">ASP.NET</span>
-										<span className="badge text-bg-primary me-2">Python</span>
-										<span className="badge text-bg-primary me-2">Testing</span>
-										<span className="badge text-bg-primary me-2">MSSQL</span>
+										<CodeTag tag="C#" />
+										<CodeTag tag="ASP.NET" />
+										<CodeTag tag="Python" />
+										<CodeTag tag="Testing" />
+										<CodeTag tag="MSSQL" />
 									</li>
 
 									<li className="mb-3">
 										User Experience & Design <br />
-										<span className="badge text-bg-primary me-2">
-											Design conventions
-										</span>
-										<span className="badge text-bg-primary me-2">
-											User testing
-										</span>
-										<span className="badge text-bg-primary me-2">
-											User flow
-										</span>
-										<span className="badge text-bg-primary me-2">
-											User recognition
-										</span>
-										<span className="badge text-bg-primary me-2">
-											Atomic design
-										</span>
+										<CodeTag tag="Design conventions" />
+										<CodeTag tag="User testing" />
+										<CodeTag tag="User flow" />
+										<CodeTag tag="User recognition" />
+										<CodeTag tag="Atomic design" />
 									</li>
 								</ul>
 							</section>
@@ -197,35 +199,26 @@ export default function Home() {
 								<ul>
 									<li className="mb-3">
 										Front End Development <br />
-										<span className="badge text-bg-primary me-2">
-											Javascript
-										</span>
-										<span className="badge text-bg-primary me-2">HTML</span>
-										<span className="badge text-bg-primary me-2">CSS</span>
-										<span className="badge text-bg-primary me-2">SCSS</span>
+										<CodeTag tag="Javascript" />
+										<CodeTag tag="HTML" />
+										<CodeTag tag="CSS" />
+										<CodeTag tag="SCSS" />
 									</li>
 
 									<li className="mb-3">
 										Visual identity and Graphic Design <br />
-										<span className="badge text-bg-primary me-2">
-											Illustrator
-										</span>
-										<span className="badge text-bg-primary me-2">
-											Photoshop
-										</span>
-										<span className="badge text-bg-primary me-2">
-											Design concepts
-										</span>
+										<CodeTag tag="Illustrator" />
+										<CodeTag tag="Photoshop" />
+										<CodeTag tag="Premire Pro" />
+										<CodeTag tag="Design concepts" />
 									</li>
 
 									<li className="mb-3">
 										Back End Development <br />
-										<span className="badge text-bg-primary me-2">PHP</span>
-										<span className="badge text-bg-primary me-2">MYSQL</span>
-										<span className="badge text-bg-primary me-2">
-											Server-Side Validation
-										</span>
-										<span className="badge text-bg-primary me-2">API's</span>
+										<CodeTag tag="PHP" />
+										<CodeTag tag="MYSQL" />
+										<CodeTag tag="Server-Side Validation" />
+										<CodeTag tag="API" />
 									</li>
 								</ul>
 							</section>
@@ -252,11 +245,11 @@ export default function Home() {
 									<h4>HTX</h4>
 									<h5>Sukkertoppen HTX 2017 - 2019</h5>
 									<ul>
-										<li className="mb-3">Communication & IT A</li>
-										<li className="mb-3">English A</li>
-										<li className="mb-3">SRP</li>
-										<li className="mb-3">Danish A</li>
-										<li className="mb-3">Math B</li>
+										<li className="mb-2">Communication & IT A</li>
+										<li className="mb-2">English A</li>
+										<li className="mb-2">SRP</li>
+										<li className="mb-2">Danish A</li>
+										<li className="mb-2">Math B</li>
 									</ul>
 								</header>
 							</section>
@@ -264,8 +257,8 @@ export default function Home() {
 					</section>
 
 					<section id="experience" className="col-lg-8 mb-5 list-section">
-						<header className="mb-4 fw-bold text-uppercase">
-							<h2>Experience</h2>
+						<header className="mb-4">
+							<h2 className="fw-bold text-uppercase">Experience</h2>
 						</header>
 
 						<article id="alphasol" className="mb-4">
@@ -336,10 +329,12 @@ export default function Home() {
 
 				<section id="projects" className="mb-5">
 					<header className="mb-4 fw-bold text-uppercase">
-						<h2>Projects</h2>
+						<h2 className="fw-bold text-uppercase">Projects</h2>
 					</header>
 					<article>
-						<h3>TBA</h3>
+						<center>
+							<h3>TBA</h3>
+						</center>
 					</article>
 				</section>
 			</main>
