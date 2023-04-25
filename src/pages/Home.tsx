@@ -1,33 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router";
+import React from "react";
 import CodeTag from "../components/CodeTag";
 import DropDownSection from "../components/DropDownSection";
 //import CV from "../assets/CV.png";
 
 export default function Home() {
-	/*
-	useEffect(() => {
-		document.title = "Jeppe E. Bentzen Portfolio";
-	});
-	*/
-
-	function showEvent(e) {
-		if (e.key != undefined && e.key != "Enter") {
-			return;
-		}
-
-		const target = e.currentTarget.nextElementSibling;
-		const arrow = e.currentTarget.querySelector(".bi.bi-caret-right");
-
-		if (!target.classList.contains("hideable-open")) {
-			target.classList.add("hideable-open");
-			arrow.classList.add("ninetydeg");
-		} else {
-			target.classList.remove("hideable-open");
-			arrow.classList.remove("ninetydeg");
-		}
-	}
-
 	return (
 		<>
 			<main className="container">
@@ -57,9 +33,6 @@ export default function Home() {
 							className="d-lg-none btn btn-primary btn-lg me-md-3"
 						>
 							Contact
-						</a>
-						<a href="#resume" className="btn btn-primary btn-lg me-md-3">
-							Resume
 						</a>
 						<a href="#projects" className="btn btn-primary btn-lg">
 							Projects
