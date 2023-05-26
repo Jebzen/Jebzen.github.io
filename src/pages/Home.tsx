@@ -285,16 +285,15 @@ export default function Home() {
 							img={LoginBanyo}
 							desc={
 								<>
-									A{" "}
-									<span className="text-decoration-underline">
-										Fullstack application
-									</span>{" "}
-									made with <CodeTag tag="Vite" /> & <CodeTag tag="React.js" />
-									for the Frontend, <CodeTag tag="Tailwind" />
-									for the styling, <CodeTag tag="Cypress" />
-									for the E2E testing, <CodeTag tag="PHP" />
-									for the Backend API, and <CodeTag tag="MySQL" />
-									for the Database
+									<p className="card-text fw-bold">
+										Tech stack: <br />
+										<CodeTag tag="Vite" />
+										<CodeTag tag="React.js" />
+										<CodeTag tag="Tailwind" />
+										<CodeTag tag="Cypress" />
+										<CodeTag tag="PHP" />
+										<CodeTag tag="MySQL" />
+									</p>
 								</>
 							}
 							repoLink="https://github.com/Jebzen/Banyo"
