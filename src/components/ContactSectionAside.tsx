@@ -7,7 +7,7 @@ export default function ContactSectionAside() {
 				<article className="bg-primary p-3">
 					<h3 className="mb-3 fw-bold">Want to contact me?</h3>
 					<p>
-						Write to my personal email adress at any time:{" "}
+						Write to my personal email address at any time:{" "}
 						<a href="mailto:jeb.bentzen.work@gmail.com" className="text-white">
 							jeb.bentzen.work@gmail.com
 						</a>
