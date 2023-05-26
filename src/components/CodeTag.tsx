@@ -5,5 +5,5 @@ interface ICodeTag {
 }
 
 export default function CodeTag(props: ICodeTag) {
-	return <span className="badge text-bg-primary me-2">{props.tag}</span>;
+	return <span className="badge text-bg-primary me-1">{props.tag}</span>;
 }

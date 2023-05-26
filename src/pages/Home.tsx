@@ -3,7 +3,8 @@ import CodeTag from "../components/CodeTag";
 import DropDownSection from "../components/DropDownSection";
 import ContactSectionPhone from "../components/ContactSectionPhone";
 import ContactSectionAside from "../components/ContactSectionAside";
-//import CV from "../assets/CV.png";
+import Project from "../components/Project";
+import LoginBanyo from "../assets/Banyo-Login-System.png";
 
 export default function Home() {
 	return (
@@ -65,6 +66,115 @@ export default function Home() {
 					</section>
 
 					<ContactSectionAside />
+
+					<section id="experience" className="col-lg-8 mb-5 list-section">
+						<header className="mb-4">
+							<h2 className="fw-bold text-uppercase">Experience</h2>
+						</header>
+
+						<DropDownSection
+							title={"Human Power"}
+							id={"HPInternship"}
+							level={"Internship - IT Consultant"}
+							year={"May 23 - Jun 23"}
+							startShown={true}
+						>
+							<ul>
+								<li className="mb-3">
+									Maintenance and development for{" "}
+									<a href="https://myperfectmatch.dk" target="_blank">
+										myperfectmatch.dk
+									</a>{" "}
+									<br />
+									<CodeTag tag="WordPress" />
+									<CodeTag tag="PHP" />
+									<CodeTag tag="MySQL" />
+								</li>
+								<li className="mb-3">
+									Development for Match and Search Algorithm <br />
+									<CodeTag tag="Advanced MySQL" />
+									<CodeTag tag="Ultimate Member" />
+								</li>
+								<li className="mb-3">Dealbreaker implementation</li>
+							</ul>
+						</DropDownSection>
+
+						<DropDownSection
+							title={"Alpha Solutions"}
+							id={"alphasol"}
+							level={"Internship - Web Developer"}
+							year={"Aug 22 - Okt 22"}
+							startShown={false}
+						>
+							<ul>
+								<li className="mb-3">
+									E-commerce webshop with a Headless CMS <br />
+									<CodeTag tag="Vendure" />
+									<CodeTag tag="Umbraco Heartcore" />
+								</li>
+								<li className="mb-3">
+									Integration with the search engine Solr <br />
+									<CodeTag tag="Java" />
+									<CodeTag tag="Server" />
+								</li>
+								<li className="mb-3">
+									CI/CD & system testing <br />
+									<CodeTag tag="Github actions" />
+									<CodeTag tag="Jest" />
+								</li>
+								<li className="mb-3">
+									Background task manager with Hangfire <br />
+									<CodeTag tag="ASP.NET" />
+									<CodeTag tag="Asynchronous actions" />
+								</li>
+								<li className="mb-1">Rendered Client sided</li>
+								<li className="mb-1">Login with Google Authentication</li>
+							</ul>
+						</DropDownSection>
+
+						<DropDownSection
+							title={"SOHOS ApS"}
+							id={"multimediaintern"}
+							level={"Rich Media Specialist"}
+							year={"Sep 21 - Jun 22"}
+							startShown={false}
+						>
+							<ul>
+								<li className="mb-3">
+									Maintenance and development for 3 websites <br />
+									<CodeTag tag="WordPress" />
+									<CodeTag tag="Elementor" />
+									<CodeTag tag="PHP" />
+									<CodeTag tag="SEO" />
+									<CodeTag tag="Site Security & Backup" />
+									<CodeTag tag="Migration" />
+								</li>
+								<li className="mb-3">
+									WordPress development with Elementor <br />
+									<CodeTag tag="Responsive Design" />
+									<CodeTag tag="Design systems" />
+								</li>
+								<li className="mb-3">
+									Third party intergration with Google Analytics, WPbackup, etc
+									<br />
+									<CodeTag tag="WPmail" />
+									<CodeTag tag="Facebook Messenger" />
+									<CodeTag tag="Calendly" />
+									<CodeTag tag="Facebook Pixel" />
+								</li>
+								<li className="mb-3">
+									Custom made payment form with Javascript, PHP and MYSQL <br />
+									<CodeTag tag="Stripe" />
+									<CodeTag tag="ESM6" />
+									<CodeTag tag="Webpack" />
+									<CodeTag tag="Babel" />
+								</li>
+								<li className="mb-1">
+									Custom WordPress intergration, development and styling
+								</li>
+							</ul>
+						</DropDownSection>
+					</section>
 
 					<section id="education" className="col-lg-8 mb-5 list-section">
 						<header className="mb-4">
@@ -161,89 +271,6 @@ export default function Home() {
 							</ul>
 						</DropDownSection>
 					</section>
-
-					<section id="experience" className="col-lg-8 mb-5 list-section">
-						<header className="mb-4">
-							<h2 className="fw-bold text-uppercase">Experience</h2>
-						</header>
-
-						<DropDownSection
-							title={"Alpha Solutions"}
-							id={"alphasol"}
-							level={"Internship"}
-							place={"Alpha Solutions Denmark"}
-							year={"Aug 22 - Okt 22"}
-							startShown={false}
-						>
-							<ul>
-								<li className="mb-3">
-									E-commerce webshop with a Headless CMS <br />
-									<CodeTag tag="Vendure" />
-									<CodeTag tag="Umbraco Heartcore" />
-								</li>
-								<li className="mb-3">
-									Integration with the search engine Solr <br />
-									<CodeTag tag="Java" />
-									<CodeTag tag="Server" />
-								</li>
-								<li className="mb-3">
-									CI/CD & system testing <br />
-									<CodeTag tag="Github actions" />
-									<CodeTag tag="Jest" />
-								</li>
-								<li className="mb-3">
-									Background task manager with Hangfire <br />
-									<CodeTag tag="ASP.NET" />
-									<CodeTag tag="Asynchronous actions" />
-								</li>
-								<li className="mb-1">Rendered Client sided</li>
-								<li className="mb-1">Login with Google Authentication</li>
-							</ul>
-						</DropDownSection>
-
-						<DropDownSection
-							title={"SOHOS ApS"}
-							id={"multimediaintern"}
-							level={"Rich Media Specialist"}
-							year={"Sep 21 - Jun 22"}
-							startShown={false}
-						>
-							<ul>
-								<li className="mb-3">
-									Maintenance and development for 3 websites <br />
-									<CodeTag tag="WordPress" />
-									<CodeTag tag="Elementor" />
-									<CodeTag tag="PHP" />
-									<CodeTag tag="SEO" />
-									<CodeTag tag="Site Security & Backup" />
-									<CodeTag tag="Migration" />
-								</li>
-								<li className="mb-3">
-									WordPress development with Elementor <br />
-									<CodeTag tag="Responsive Design" />
-									<CodeTag tag="Design systems" />
-								</li>
-								<li className="mb-3">
-									Third party intergration with Google Analytics, WPbackup, etc
-									<br />
-									<CodeTag tag="WPmail" />
-									<CodeTag tag="Facebook Messenger" />
-									<CodeTag tag="Calendly" />
-									<CodeTag tag="Facebook Pixel" />
-								</li>
-								<li className="mb-3">
-									Custom made payment form with Javascript, PHP and MYSQL <br />
-									<CodeTag tag="Stripe" />
-									<CodeTag tag="ESM6" />
-									<CodeTag tag="Webpack" />
-									<CodeTag tag="Babel" />
-								</li>
-								<li className="mb-1">
-									Custom WordPress intergration, development and styling
-								</li>
-							</ul>
-						</DropDownSection>
-					</section>
 				</section>
 				{/* CONTENT END */}
 
@@ -252,10 +279,26 @@ export default function Home() {
 					<header className="mb-4 fw-bold text-uppercase">
 						<h2 className="fw-bold text-uppercase">Projects</h2>
 					</header>
-					<article>
-						<center>
-							<h3>TBA</h3>
-						</center>
+					<article className="project-section">
+						<Project
+							name="Login Application"
+							img={LoginBanyo}
+							desc={
+								<>
+									A{" "}
+									<span className="text-decoration-underline">
+										Fullstack application
+									</span>{" "}
+									made with <CodeTag tag="Vite" /> & <CodeTag tag="React.js" />
+									for the Frontend, <CodeTag tag="Tailwind" />
+									for the styling, <CodeTag tag="Cypress" />
+									for the E2E testing, <CodeTag tag="PHP" />
+									for the Backend API, and <CodeTag tag="MySQL" />
+									for the Database
+								</>
+							}
+							repoLink="https://github.com/Jebzen/Banyo"
+						/>
 					</article>
 				</section>
 				{/* PROJECTS EMD */}
