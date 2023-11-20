@@ -5,8 +5,12 @@ import ContactSectionPhone from "../components/ContactSectionPhone";
 import ContactSectionAside from "../components/ContactSectionAside";
 import Project from "../components/Project";
 import LoginBanyo from "../assets/Banyo-Login-System.png";
+import { calculateAge } from "../utl/EasyFunctions";
 
 export default function Home() {
+
+	var ageString = calculateAge('1999-06-14');
+
 	return (
 		<>
 			<main className="container">
@@ -54,7 +58,7 @@ export default function Home() {
 						</header>
 						<article>
 							<p>
-								I am a young 23 year old Web Developer with a bachelor in web
+								I am a young {ageString} year old Web Developer with a bachelor in web
 								development, and I have a special interest in quality assurance
 								and quality assessment. I have been a tutor during my time as a
 								web developer, and I have an interest in new and modern web
